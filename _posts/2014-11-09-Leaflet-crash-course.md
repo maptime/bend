@@ -19,7 +19,7 @@ For data, we'll be using a polygon layer of Bend Parks & Recreation District pro
 
 The map we'll be building uses static map tiles and then builds vector symbols on top using GeoJSON files. Create a directory called `/faultparks` on your computer. Create a `/data` directory inside. Then, open your code editor and create a new html file and save it to `/faultparks/index.html`.
 
-Download the [data from our Github page]("https://github.com/MaptimeBend/faultparks") and copy the `.js` files to your `/data` folder. Everything else you'll need can be copied from this page.
+Download the [data from our Github page](https://github.com/MaptimeBend/faultparks) and copy the `.js` files to your `/data` folder. Everything else you'll need can be copied from this page.
 
 ### 2. Add the necessary code to your `index.html`
 
