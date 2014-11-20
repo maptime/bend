@@ -6,7 +6,7 @@ comments: true
 author: Andy Zeigert
 ---
 
-![Around the table from left: Ryan McAdler, Beej Jorgensen, John Barry, Andy Zeigert and Colleen Miller. Not pictured is Alex Friant, who took the picture.]({{ site.url }}/assets/meeting_1.jpg)
+![Around the table from left: Ryan McAdler, Beej Jorgensen, John Barry, Andy Zeigert and Colleen Miller. Not pictured is Alex Friant, who took the picture.]({{ site.url }}/bend/assets/meeting_1.jpg)
 
 The inaugaral Maptime Bend meeting was a success! Below is a rundown of the event.
 
