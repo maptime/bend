@@ -211,7 +211,7 @@ You should end up with something like this:
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
-<script src="{{ site.url }}/assets/data/parks.js"></script>
+<script src="{{ site.url }}/bend/assets/data/parks.js"></script>
 <script type="text/javascript">
     var map4 = L.map('map4', {scrollWheelZoom: false}).setView([44.05, -121.30], 11);
     var layer = new L.StamenTileLayer("toner-lite");
@@ -253,8 +253,8 @@ This should add our faults layer and give it a slightly transparent red line sym
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
-<script src="{{ site.url }}/assets/data/parks.js"></script>
-<script src="{{ site.url }}/assets/data/faults.js"></script>
+<script src="{{ site.url }}/bend/assets/data/parks.js"></script>
+<script src="{{ site.url }}/bend/assets/data/faults.js"></script>
 <script type="text/javascript">
     var map5 = L.map('map5', {scrollWheelZoom: false}).setView([44.05, -121.30], 11);
     var layer = new L.StamenTileLayer("toner-lite");
@@ -315,8 +315,8 @@ This gives us a map that shows Bend's parks and the faults that run through them
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
-<script src="{{ site.url }}/assets/data/parks.js"></script>
-<script src="{{ site.url }}/assets/data/faults.js"></script>
+<script src="{{ site.url }}/bend/assets/data/parks.js"></script>
+<script src="{{ site.url }}/bend/assets/data/faults.js"></script>
 <script type="text/javascript">
   var map6 = L.map('map6', {scrollWheelZoom: false}).setView([44.05, -121.30], 11);
   var layer = new L.StamenTileLayer("toner-lite");

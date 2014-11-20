@@ -8,4 +8,4 @@ author: Andy Zeigert
 
 The second Maptime Bend meeting was a success! Turnout was good and we introduced Leaflet, which led to a lot of great discussion. We had several colorful maps by the end of the night. Stay tuned for information about next month's meeting, where we'll be going over the basics of OpenStreetMap.
 
-![The second meeting of Maptime Bend had a slightly larger turnout!]({{site.url}}/assets/meeting2.jpg)
+![The second meeting of Maptime Bend had a slightly larger turnout!]({{site.url}}/bend/assets/meeting2.jpg)
