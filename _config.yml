@@ -1,4 +1,4 @@
-baseurl: /
+baseurl: /bend
 permalink: pretty
 markdown: kramdown
 paginate: 5
