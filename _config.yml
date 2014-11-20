@@ -1,0 +1,10 @@
+baseurl: 
+permalink: pretty
+markdown: kramdown
+paginate: 5
+repo: bend
+github_org: maptime
+maptime:
+  chapter: Maptime Bend
+  twitter: maptimebend
+  disqus: maptimebend
