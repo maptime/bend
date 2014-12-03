@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reminder: Next meeting is Dec. 3"
+title: "Reminder: Next meeting is Dec. 4"
 date: 2014-12-02 08:30:00
 categories: updates
 author: Andy Zeigert
