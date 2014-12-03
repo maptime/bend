@@ -6,4 +6,4 @@ categories: updates
 author: Andy Zeigert
 ---
 
-Just a reminder that the next Maptime Bend meetup is Thursday, Dec. 3 at McMenamins! RSVP with the button to the right of this post!
+Just a reminder that the next Maptime Bend meetup is Thursday, Dec. 4 at McMenamins! RSVP with the button to the right of this post!
