@@ -5,16 +5,14 @@ date: 2014-12-03 22:18:00
 author: Beej Jorgensen
 ---
 
-What is OSM?
-------------
+### What is OSM?
 
 OpenStreetMap is a volunteer project to build a free map of the world.
 Started in England, it has spread globally. The United States map is
 functionally complete (though mapping is an endless task.)
 
 
-Editing OSM data
-----------------
+### Editing OSM data
 
 There are several methods to edit OSM data, but the most popular are the
 online [iD editor](http://wiki.openstreetmap.org/wiki/ID), and the
@@ -23,8 +21,7 @@ offline [JOSM](https://josm.openstreetmap.de/) editor.
 This article focuses on iD.
 
 
-Legal
------
+### Legal
 
 OSM is a free map of the world. It's HUGELY IMPORTANT that none of the
 data entered into the map is encumbered by copyright. NEVER, NEVER, EVER
@@ -41,8 +38,7 @@ See the [OSM Legal FAQ](http://wiki.openstreetmap.org/wiki/Legal_FAQ)
 for more details.
 
 
-Setup
------
+### Setup
 
 1. If you haven't already, install a supported browser, like
    [Chrome](http://www.google.com/chrome),
@@ -59,8 +55,7 @@ Setup
 You're ready to begin improving the map!
 
 
-Editing Overview
-----------------
+### Editing Overview
 
 You can play around in the editor all you want without impacting the
 live map. There's undo/redo functionality, and everything stays local to
@@ -79,8 +74,7 @@ Start with small edits. Don't delete anything that you didn't make
 unless you know what you're doing. Have fun!
 
 
-Adding and Editing Points and Shapes
-------------------------------------
+### Adding and Editing Points and Shapes
 
 There are three main types of things you can edit in iD: points, lines,
 and areas. You can select which you wish to draw with the menu at the
@@ -105,7 +99,7 @@ then a renderer will know to draw it with a certain type of line.
 > pretend I didn't lie there.)
 
 
-### Adding Points
+##### Adding Points
 
 A point represents a single thing. Like a bathroom ("toilets") or a pub
 or a post office. Or a city.
@@ -143,7 +137,7 @@ to the database for rendering!
 That's all there is to it!
 
 
-### Editing Points
+#### Editing Points
 
 If you click on a point, a context menu will pop up with additional
 actions you can take. For points, this is simply "Delete".
@@ -155,7 +149,7 @@ You can move a point simply by dragging it to another place.
 You can select multiple points by holding down SHIFT while you select
 them.
 
-### Adding Lines
+#### Adding Lines
 
 Lines work basically the same way as points, with a few more bells and
 whistles.
@@ -176,7 +170,7 @@ bring up the track sub-attributes menu.
 Remember, all the sub-attributes are optional, including the name.
 
 
-### Editing Lines
+#### Editing Lines
 
 Similar to points, lines have a context menu when you click on them. You
 can straighten them, move them, delete them, and reverse them.
@@ -210,7 +204,7 @@ them. This will bring up another context menu that allows you to merge
 lines
 
 
-### Adding and Editing Areas
+#### Adding and Editing Areas
 
 An area is just a closed line. Select the "Area" tool and click points
 where you want the area to be. Double-click the last point or hit ESCAPE
@@ -247,10 +241,9 @@ created.
 > a lot of editing without ever touching them.
 
 
-Tagging
--------
+### Tagging
 
-### Tag overview
+#### Tag overview
 
 Tags are key=value pairs that are stored in the database for a single
 point, line, or area. There could be zero tags, or there could be many.
@@ -267,12 +260,12 @@ You can also add and remove tags from the "All tags" interface. This is
 particularly useful if you need to enter a tag that's not exposed in the
 iD UI. You can see, above, for instance, that `fee=no` is not in the UI.
 
-### A Note on Names
+#### A Note on Names
 
 When tagging names, the general rule is to use the full name of the
 object, e.g. use "Northwest Milwaukee Avenue", *not* "NW Milwaukee Ave".
 
-### Which tag to use?
+#### Which tag to use?
 
 How do you know what to search for when tagging? What are the proper
 tags for a parking aisle? For a driveway? For a dirt road? For a
@@ -302,7 +295,7 @@ wants to render a mountain-biking-specific map, the detailed mountain
 biking tags will enable them to label trail difficulty, trail width,
 etc.
 
-### What if a road is paved then turns to dirt partway through?
+#### What if a road is paved then turns to dirt partway through?
 
 Each object in the database has its own set of tags. A single line
 cannot be both `surface=paved` and `surface=unpaved` at the same time.
@@ -310,8 +303,7 @@ You must split the line into two, per the Editing Lines section, above,
 and tag the ends separately.
 
 
-Image Layers
-------------
+### Image Layers
 
 You can change the background of the map by clicking the "Background
 settings" button on the right.
@@ -337,8 +329,7 @@ which you don't know the name, see if you can find it on this layer.
 More information in the TIGER section, below.
 
 
-TIGER--US Census Maps
----------------------
+### TIGER--US Census Maps
 
 The US Census maintains its own set of maps, called the TIGER maps. For
 their purposes, geographic accuracy wasn't particularly valuable, so the
@@ -351,7 +342,7 @@ photos or GPS data. For the entire US. By hand. For urban areas, this is
 largely complete as of 2014.
 
 
-### Fixing TIGER data
+#### Fixing TIGER data
 
 In this fine example, we have the Bing aerial imagery layer, as well as
 the new TIGER Roads layer activated. The TIGER data overlay is yellow
@@ -424,7 +415,7 @@ road into the proper place between Sonoma and Viola streets. Then I
 click "Save", enter a changeset description, and *BAM!* I've improved
 the map!
 
-### Other TIGER problems
+#### Other TIGER problems
 
 There are some other common issues you might run into.
 
@@ -439,7 +430,7 @@ is that virtually all dirt roads in the forest are `highway=residential`
 when they should either be `highway=track` or
 `highway=unclassified`/`surface=unpaved`.
 
-### Using TIGER to name streets
+#### Using TIGER to name streets
 
 A fairly common case is that there will be some new construction that
 you see on aerial photos but has not been added to OSM.
@@ -451,8 +442,7 @@ and often find the names there. Don't forget to use the full street
 name--no abbreviations!
 
 
-Uploading GPS Traces
---------------------
+### Uploading GPS Traces
 
 If you record a GPX file on your GPS that represents a trail or new
 road (or anything else that can't easily be determined by the aerial
@@ -464,7 +454,7 @@ either have to wait until the OSM traces layer is updated (timeframe
 unknown), or you can take your individual GPX and show it on the map as
 described above.
 
-### How to upload a trace
+#### How to upload a trace
 
 Click "GPS Traces" at the top of the main OSM web page, then click
 "Upload a trace".
@@ -477,10 +467,9 @@ I suggest "Trackable" for the "Visibility".
 Once you upload the trace, you'll get an email when it is imported.
 
 
-Additional Links
-----------------
+### Additional Links
 
-### Bug Tracker (Notes)
+#### Bug Tracker (Notes)
 
 If you're viewing (not editing) the map the website, you can click the
 "layers" icon on the right side of the screen. On that popup, you can
@@ -493,7 +482,7 @@ resolved it. Often local knowledge is required.
 To add a new note, the "add note" icon is four icons down from the
 "layers" icon on the map view right sidebar.
 
-### Map Roulette
+#### Map Roulette
 
 [Map Roulette](http://maproulette.org/) will give you random things to
 fix on the map. Some of them you'll be able to fix, some of them you
@@ -501,7 +490,7 @@ won't be sure of and you'll skip. If you want to pour random energy into
 the map, this is a good site to do it on.
 
 
-### Strava Slide
+#### Strava Slide
 
 The elves as Strava Labs have developed a pretty fantastic tool to
 automatically bend lines around uploaded GPS data. And since Strava is a
@@ -521,7 +510,7 @@ If there's just one section of a trail that needs Sliding, you can split
 it into its own line, then apply the Slide tool, then merge it back
 together with the lines it used to be attached to.
 
-### JOSM
+#### JOSM
 
 [JOSM](https://josm.openstreetmap.de/) is an offline editor, meaning
 you'll download a chosen, rectangular chunk of data, edit it, and then
