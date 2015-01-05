@@ -5,6 +5,8 @@ title: Next meetup set for January 7!
 rsvp: http://www.meetup.com/maptimebend/events/219266930/
 ---
 
+**UPDATE 3:** January's Maptime Bend will once again be at McMenamins main pub in Bend, in the Smoke Room!
+
 **UPDATE 2:** QGIS can take a while to download and install, and if we all try to do it at once on a restaurant wifi, we'll never get it done. **There will be a couple of thumb drives with installers available,** but if you have time to download and install beforehand, it'll save time for all those fancy raster algebra and spatial join demos.
 
 There are a couple ways to install QGIS. A good way for Windows users is [OSGeo4W](http://trac.osgeo.org/osgeo4w/). Unfortunately there is not a Mac version. (The "W" stands for Windows, after all.) The official installer for QGIS is [here](http://qgis.org/en/site/forusers/download.html), but the Mac install requires you to install a lot of separate dependencies. (Don't even get me started on trying to _update_ QGIS on a Mac.)
