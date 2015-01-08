@@ -1,0 +1,950 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <meta charset='UTF-8'/>
+  <meta name='twitter:site' content='@maptimebend' />
+  <meta property='og:site_name' content='Maptime Bend' />
+  <meta name='twitter:url' content='' />
+  <meta property='og:url' content='' />
+  <meta name='twitter:title' content='' />
+  <meta property='og:title' content='' />
+  <meta name='twitter:description' content='{% for item in paginator.posts %} &amp;lt;div class=&#39;space-bottom4&#39;&amp;gt; {% if item.category == ‘event’ %} &amp;lt;h2&amp;gt;&amp;lt;a href=&#39;{{site.baseurl}}{{item.url}}&#39;&amp;gt;{{item.title}}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt; {{item.content}} &amp;lt;div class=&#39;keyline-all round pad2 col12 clearfix&#39;&amp;gt; &amp;lt;div class=&#39;col8 pad0y&#39;&amp;gt; Join us: &amp;lt;span class=&#39;quiet&#39;&amp;gt;{{item.date...' />
+  <meta property='og:description' content='{% for item in paginator.posts %} &amp;lt;div class=&#39;space-bottom4&#39;&amp;gt; {% if item.category == ‘event’ %} &amp;lt;h2&amp;gt;&amp;lt;a href=&#39;{{site.baseurl}}{{item.url}}&#39;&amp;gt;{{item.title}}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt; {{item.content}} &amp;lt;div class=&#39;keyline-all round pad2 col12 clearfix&#39;&amp;gt; &amp;lt;div class=&#39;col8 pad0y&#39;&amp;gt; Join us: &amp;lt;span class=&#39;quiet&#39;&amp;gt;{{item.date...' />
+  
+  <title>Maptime Bend</title>
+  <link rel='stylesheet' href='/bend/site.css' type='text/css'/>
+  <link rel='shortcut icon' href='/bend/img/favicon.png' type='image/x-icon' />
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
+</head>
+<body>
+  <div class='masthead fill-blue'>
+    <div class='fill-darken0 pad1y strong dark'>
+      <div class='limiter'>
+        <a href='http://maptime.io/'>maptime.io</a>
+      </div>
+    </div>
+  </div>
+  <header class='fill-blue'>
+    <div class='limiter contain'>
+      <a href='/bend/' class='sprite maptime pin-left'>Maptime</a>
+      <div class='col12 clearfix pad2y'>
+        <div class='round pad2 col6 margin6 strong dark fill-darken0 fill-chapter row4 truncate contain'>
+          <h1><a class='dark contain z1' href='/bend/'>Maptime Bend</a></h1>
+          <div class='pin-right pad4x pad1y hide-mobile'>
+            <span class='sprite marker'></span>
+          </div>
+          <a href='https://twitter.com/maptimebend/' class='contain z1 fill-blue button'>
+            @maptimebend on Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class='limiter pad4y'>
+    <div class='col12 clearfix'>
+      <aside class='col3 fr space-bottom2 sidebar'>
+        <div class='fill-purple strong dark round pad2 space-bottom2'>
+          <h3>The next Maptime Bend is:</h3>
+          <div id='rsvpdate'></div>
+        </div>
+
+        <div class='hide-mobile'>
+          <div class='popup-group'>
+            <a href='https://github.com/maptime/bend/' class='col12 space-bottom2 button'>Watch these events</a>
+            <div class='popup popup-big keyline-all pad1 small round'>
+              <ol class='space-bottom1'>
+                <li>1. Click the <strong>Watch these events</strong> button.</li>
+                <li>2. Login to GitHub or signup for an account.</li>
+                <li>3. Click the <strong>Watch</strong> button on the repo.</li>
+              </ol>
+              <div class='center'>
+                <img src='/bend/img/watchrepo.png' alt='Watch repo' />
+              </div>
+            </div>
+          </div>
+
+          <div class='followers'></div>
+          <div class='center'>
+            <div class='pad0y space-bottom2'>
+              <a class='small' href='https://github.com/maptime/bend/watchers'>View all</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class='col8 margin2r prose content'>
+        <!-- This loops through the paginated posts -->
+
+<div class='space-bottom4'>
+
+  
+
+    <h2><a href='/bend/2015/01/07/lets-make-a-map-with-qgis/'>QGIS FTW!</a></h2>
+    <h3 id="what-is-qgis">What is QGIS?</h3>
+
+<p>QGIS (previously known as “Quantum GIS”) is a cross-platform free and open-source desktop geographic information systems (GIS) application that provides data viewing, editing, and analysis capabilities.</p>
+
+<p>Licensed under the
+    <a target="_blank" href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a></p>
+
+<h3 id="qgis-allows-you-to-make-maps-and-more">QGIS allows you to make maps and more…</h3>
+
+<p>QGIS is a powerful software application that allows you to work with Geospatial data (create, read, update, and delete), create maps, visualize data, and perform rich Geospatial analysis.  Below are some examples:</p>
+
+<p><strong>Map Cartography</strong>
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 11.26.46 AM.png" alt="Hawaii Map" title="Hawaii Map" /></p>
+
+<p><strong>Infographics</strong>
+<img src="https://farm4.staticflickr.com/3889/14812503730_8c43e2dae8_c.jpg" alt="Alt text" />
+Source: <a href="http://www.flickr.com/photos/48244569@N02/14812503730/in/pool-qgis-screenshots/">Flickr </a></p>
+
+<h3 id="qgis-is-a-geospatial-swiss-army-knife">QGIS is a Geospatial Swiss Army Knife</h3>
+
+<p>QGIS is a very powerful software application.  With that said the product is very <b> feature </b> rich and is built for GIS users.</p>
+
+<p><img src="http://tiwibzone.tiwib.netdna-cdn.com/images/ultimate-swiss-army-knife1.jpg" alt="Hawaii Map" title="Hawaii Map" /></p>
+
+<p><strong>Knowing the basics of GIS will be helpful to get started</strong>  If you are new to GIS I would recommend grabbing a fresh cup of coffee and reading <a href="https://github.com/tmcw">Tom MacWright’s</a> <a href="http://mapschool.io/">MapSchool</a>.  It is an EXCELLANT read to help you better understand the basics of GIS and cartography.</p>
+
+<h3 id="qgis-components">QGIS Components</h3>
+
+<p><strong>QGIS Desktop</strong>
+<img src="http://maptimeboston.github.io/qgis-101/images/qgisdesktopscreenshot.jpg" alt="Alt text" /></p>
+
+<p><strong>QGIS Browser</strong>
+<img src="http://maptimeboston.github.io/qgis-101/images/qgisbrowserscreenshot.png" alt="Alt text" /></p>
+
+<p><strong>QGIS Server</strong>
+<img src="http://maptimeboston.github.io/qgis-101/images/qgisserverscreenshot.png" alt="Alt text" /></p>
+
+<p><strong>BETA QGIS Server</strong>
+<img src="http://maptimeboston.github.io/qgis-101/images/qgisandroidscreenshot.jpg" alt="Alt text" /></p>
+
+<p>For this talk today we are going to focus on using the QGIS Desktop application.</p>
+
+<h3 id="getting-started">Getting Started</h3>
+
+<p>To install QGIS go to the <a href="http://www.qgis.org/en/site/">home page</a> and click on the “Download Now” button.</p>
+
+<p><img src="/bend/assets/qgis-lets-make-a-map/images/Screen_Shot_2015-01-07_at_2_52_05_PM.png" alt="QGIS" title="QGIS" /></p>
+
+<p><strong>NOTE:</strong> The file download is around 500 MB.</p>
+
+<p>Once you have installed QGIS you should now have a fancy new application installed under Application or Program Files that awaits your mapping needs.</p>
+
+<p><img src="/bend/assets/qgis-lets-make-a-map/images/Screen_Shot_2015-01-07_at_2_57_28_PM.png" alt="QGIS FTW" title="QGIS FTW" /></p>
+
+<p><strong>Boundless QGIS Installers</strong></p>
+
+<p>As Andy pointed out in the meetup announcement, another install route is to use the  <a href="http://boundlessgeo.com/solutions/solutions-software/qgis/qgis-download/">Boundless’s QGIS installers</a>. Although their release is a couple versions behind the latest QGIS build, they include everything you’ll need to get started. Their site also requires you to enter your email address, and then they’ll email you a link to the installers. For your convenience, I’ve done that already and have linked directly to the ZIP archives here:</p>
+
+<p>Windows installer: <a href="https://www.dropbox.com/s/ewlw2lr6md0fdxq/OpenGeoSuite-QGIS-windows-latest.zip?dl=0">Download</a></p>
+
+<p>Mac installer: <a href="https://www.dropbox.com/s/vlh8elshnb7175s/OpenGeoSuite-QGIS-osx-latest.zip?dl=0">Download</a></p>
+
+<h3 id="qgis-application---ui">QGIS Application - UI</h3>
+
+<p><strong>Let’s get familiar with the UI</strong></p>
+
+<p><strong><em>Main UI</em></strong></p>
+
+<p>When you first launch QGIS the application should looks similar to the screenshot below:</p>
+
+<p><img src="http://maptimeboston.github.io/qgis-101/images/qgis-ui.png" alt="Alt text" /></p>
+
+<p><strong><em>Map Navigation</em></strong></p>
+
+<p><img src="http://maptimeboston.github.io/qgis-101/images/map-navigation.png" alt="Alt text" /></p>
+
+<p>The Map Navigation tools can be accessed using the top set of tools.  These tools allow you to zoom, pan, etc.</p>
+
+<p><strong><em>File Toolbar</em></strong></p>
+
+<p><img src="http://maptimeboston.github.io/qgis-101/images/file-toolbar.png" alt="Alt text" /></p>
+
+<p><strong><em>Manage Layers</em></strong></p>
+
+<p><img src="http://maptimeboston.github.io/qgis-101/images/add-data.png" alt="Alt text" /></p>
+
+<p><strong><em>Attributes Toolbar</em></strong></p>
+
+<p><img src="http://maptimeboston.github.io/qgis-101/images/attribute-toolbar.png" alt="Alt text" /></p>
+
+<p><strong><em>Layers Panel</em></strong></p>
+
+<p><img src="http://maptimeboston.github.io/qgis-101/images/layers-panel.png" alt="Alt text" /></p>
+
+<ul>
+  <li>Access and manage map layers</li>
+</ul>
+
+<p><strong><em>Browser Panel</em></strong></p>
+
+<p><img src="http://maptimeboston.github.io/qgis-101/images/browser-panel.png" alt="Alt text" /></p>
+
+<ul>
+  <li>Browse local and remote geospatial data.</li>
+</ul>
+
+<p><strong><em>Other Panels and More</em></strong></p>
+
+<p><img src="http://maptimeboston.github.io/qgis-101/images/other-toolbars.png" alt="Alt text" /></p>
+
+<p><strong>OK</strong> enough of this intro stuff.  Let’s dig in and make a map.</p>
+
+<h3 id="lets-make-a-map">Let’s MAKE A MAP!</h3>
+
+<p><strong>Introduction</strong><br />
+Building on top of our previous meetups I figured that we could take a deeper look into the trail data that exists here in Central Oregon.</p>
+
+<p>Let’s start first with downloading some City Limit data from the <a href="http://www.oregon.gov/DAS/Pages/irmd/geo/sdlibrary.aspx">Oregon State Geospatial Clearinghouse</a>.  The Oregon State Geospatial Clearinghouse is a great resource for State level Geospatial data.  Local County and City data can be accessed (sometimes for $) from Deschutes County and the City of Bend.</p>
+
+<p><img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 3.51.20 PM.png" alt="QGIS FTW" title="QGIS FTW" /></p>
+
+<p><strong>Bend City Limits</strong>
+<strong><em>Steps to Download Our First Dataset</em></strong></p>
+
+<ul>
+  <li>Go to the <a href="http://www.oregon.gov/DAS/CIO/GEO/pages/alphalist.aspx">Spatial Data Library Alphalist</a></li>
+  <li>Download the <a href="http://navigator.state.or.us/sdl/data/shapefile/k24/citylim_2013.zip">City Limits 2013 Polygon Shapefile</a></li>
+  <li>Unzip the compressed file to your local machine - you should see several files which as a whole make up a <a href="http://en.wikipedia.org/wiki/Shapefile">Shapefile</a></li>
+</ul>
+
+<p><img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.01.43 PM.png" alt="QGIS FTW" title="QGIS FTW" /></p>
+
+<p><strong><em>Add the Shapefile to QGIS</em></strong></p>
+
+<ul>
+  <li>Launch QGIS</li>
+  <li>Click the “Add Vector Layer” button from the Data Toolbar<br />
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen_Shot_2015-01-07_at_4_05_00_PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>Navigate to where you downloaded the City Limits shapefile and select the .shp file.<br />
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen_Shot_2015-01-07_at_4_07_01_PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>You should see a polygon GIS layer with boundaries of Oregon City limits.
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.09.22 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+</ul>
+
+<p>OH AWESOME! Zoom in on this data.  Click the identify tool.  Explore your first dataset you have added to QGIS.</p>
+
+<p><strong><em>Changing Symbology for our City Limits Layer</em></strong>
+I am not sure about you but I am not a fan of the mauve color QGIS randomly selected for my City Limits.  In fact I really only want an outline color and no fill pattern.  Let’s explore changing the symbology for our City Limits layer.</p>
+
+<ul>
+  <li>Double click or Right Click (you WindowZ peeps) on the “citylim_2013” layer in the Map Table of Contents.  A Layer Properties Dialog should appear.
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.15.08 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>Change the Symbol Layer Type to “Outline: Simple Line”.  Pick a line color to fit the mood you are in.
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.16.36 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>I am in the mood for a DASHED line pattern
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen_Shot_2015-01-07_at_4_18_38_PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>Press Apply.  Your layer symbology should have changed.  You should see the beautiful shape of Bend City Limits.
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.22.23 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+</ul>
+
+<p>Congrats we now see the lovely shape of our fair city.</p>
+
+<p><strong>OpenStreetMap Trail Data</strong></p>
+
+<p>OK. Big deal I see the City of Bend.  I thought we were going to access some trail data.  U BETCHA!</p>
+
+<p>As we learned in our previous meetup OpenStreetMap is a treasure trove of spatial data.  There are many ways to extract.  Today we will try using <a href="http://overpass-turbo.eu/">Overpass</a> so that we can pull in .geojson data.</p>
+
+<ul>
+  <li>Go to the <a href="http://overpass-turbo.eu/">Overpass website</a>.  Overpass is amazing.  Lets dig deeper.</li>
+  <li>I want to extract all lines (known in OSM as ways) that have been tagged as a bike path.</li>
+  <li>Zoom to Bend.</li>
+  <li>Enter the following text to the right panel
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.45.48 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>Run the Query and Export a GEOJSON file
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.48.23 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>Add the .geojson file that you downloaded to your computer to QGIS.  Symbolize to your heart content.</li>
+</ul>
+
+<p><em>NOTE</em>:  Looks like some of the data in OSM needs to better attributed.</p>
+
+<p><strong>Let’s Add Some Imagery</strong></p>
+
+<p>One of the AMAZING features of OSM are all the User Plugins available.  Plugins add extra functionality to QGIS.  To complete our map we need some imagery.</p>
+
+<ul>
+  <li>Click on the Plugins menu &gt; Manage Plugins</li>
+  <li>Install the OpenLayers Plugin
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen_Shot_2015-01-07_at_4_52_57_PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>Close the Plugins Dialog.  You should now have a new Toolbar name “Web”</li>
+  <li>Choose to add Microsoft’s Bing Aerial Map
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.54.50 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>You may need to drag and drop the layers in your Layer list to move the imagery to the bottom.</li>
+</ul>
+
+<p><strong>ZOMG -  I AM A CARTOGRAPHER</strong></p>
+
+<p>OK…Let’s make a map.</p>
+
+<ul>
+  <li>Position the map.</li>
+  <li>Once positioned the way you want. Go to the Project menu and choose “New Print Composer”</li>
+  <li>Give a name for your beautiful new print composition
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.58.40 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>A whole new Application Window should appear with a Blank Paper Canvas.  This is our MAP!!!
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.59.50 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>Click on the “Add New Map” tool and drag a rectangle representing where you want to add a new map
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen_Shot_2015-01-07_at_5_01_11_PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>WOAH we have a map.  Feel free to add a title, north arrow, legend and more!
+<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 5.03.42 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+</ul>
+
+<p><strong>CONGRATS</strong>
+YOU just made your first QGIS Map
+<img src="http://media.tumblr.com/tumblr_lghpobCmQv1qbw3y0.gif" alt="QGIS FTW" title="QGIS FTW" /></p>
+
+<p><strong>Special Thanks</strong>
+Thank you MapTimeBoston for your <a href="http://maptimeboston.github.io/qgis-101">QGIS-101 tutorial</a>  Several images from this presentation are referenced in this lesson.</p>
+
+
+    <div class='pad1y keyline-top'>
+      <strong class='quiet small block space-bottom1'>Posted Jan 07 2015 by Blair Deaver</strong>
+    </div>
+
+  
+</div>
+
+<div class='space-bottom4'>
+
+  
+
+    <h2><a href='/bend/event/2015/01/07/january-maptime-bend/'>Next meetup set for January 7!</a></h2>
+    <p><strong>UPDATE 3:</strong> January’s Maptime Bend will once again be at McMenamins main pub in Bend, in the Smoke Room!</p>
+
+<p><strong>UPDATE 2:</strong> QGIS can take a while to download and install, and if we all try to do it at once on a restaurant wifi, we’ll never get it done. <strong>There will be a couple of thumb drives with installers available,</strong> but if you have time to download and install beforehand, it’ll save time for all those fancy raster algebra and spatial join demos.</p>
+
+<p>There are a couple ways to install QGIS. A good way for Windows users is <a href="http://trac.osgeo.org/osgeo4w/">OSGeo4W</a>. Unfortunately there is not a Mac version. (The “W” stands for Windows, after all.) The official installer for QGIS is <a href="http://qgis.org/en/site/forusers/download.html">here</a>, but the Mac install requires you to install a lot of separate dependencies. (Don’t even get me started on trying to <em>update</em> QGIS on a Mac.)</p>
+
+<p>The simplest way I’ve found is using <a href="http://boundlessgeo.com/solutions/solutions-software/qgis/qgis-download/">Boundless’s QGIS installers</a>. Although their release is a couple versions behind the latest QGIS build, they include everything you’ll need to get started. Their site also requires you to enter your email address, and then they’ll email you a link to the installers. For your convenience, I’ve done that already and have linked directly to the ZIP archives here:</p>
+
+<p>Windows installer: <a href="https://www.dropbox.com/s/ewlw2lr6md0fdxq/OpenGeoSuite-QGIS-windows-latest.zip?dl=0">Download</a></p>
+
+<p>Mac installer: <a href="https://www.dropbox.com/s/vlh8elshnb7175s/OpenGeoSuite-QGIS-osx-latest.zip?dl=0">Download</a></p>
+
+<p>Looking forward to seeing everyone there!</p>
+
+<p><strong>UPDATE:</strong> Moved the Maptime Bend meetup to Wednesday, Jan. 7 to avoid conflict with another popular meetup! So many meetups, so little time!</p>
+
+<p>Join us on Jan. 7, 2015, as we explore QGIS, a free and open-source desktop application for creating, editing and exporting almost all types of geospatial data. More details to come!</p>
+
+    <div class='keyline-all round pad2 col12 clearfix'>
+      <div class='col8 pad0y'>
+        Join us: <span class='quiet'>Wednesday, Jan 07 2015</span>
+      </div>
+      <div class='col4'>
+        <a class='button fill-orange block' href='http://www.meetup.com/maptimebend/events/219266930/'>RSVP</a>
+      </div>
+    </div>
+
+  
+</div>
+
+<div class='space-bottom4'>
+
+  
+
+    <h2><a href='/bend/2014/12/03/osm-id-editing/'>Getting Started with OpenStreetMap Editing</a></h2>
+    <h3 id="what-is-osm">What is OSM?</h3>
+
+<p>OpenStreetMap is a volunteer project to build a free map of the world.
+Started in England, it has spread globally. The United States map is
+functionally complete (though mapping is an endless task.)</p>
+
+<h3 id="editing-osm-data">Editing OSM data</h3>
+
+<p>There are several methods to edit OSM data, but the most popular are the
+online <a href="http://wiki.openstreetmap.org/wiki/ID">iD editor</a>, and the
+offline <a href="https://josm.openstreetmap.de/">JOSM</a> editor.</p>
+
+<p>This article focuses on iD.</p>
+
+<h3 id="legal">Legal</h3>
+
+<p>OSM is a free map of the world. It’s HUGELY IMPORTANT that none of the
+data entered into the map is encumbered by copyright. NEVER, NEVER, EVER
+use a copyrighted source for map data, unless that source has been
+specifically approved by OSM itself.</p>
+
+<p>You are free to trace any roads or entities that you see on the
+satellite view in the iD editor due to a legal agreement between OSM and
+Bing.</p>
+
+<p>USGS maps and imagery are also free to use, as well as NPS/FS maps.</p>
+
+<p>See the <a href="http://wiki.openstreetmap.org/wiki/Legal_FAQ">OSM Legal FAQ</a>
+for more details.</p>
+
+<h3 id="setup">Setup</h3>
+
+<ol>
+  <li>If you haven’t already, install a supported browser, like
+<a href="http://www.google.com/chrome">Chrome</a>,
+<a href="https://www.mozilla.org/firefox">Firefox</a>, or
+<a href="https://www.apple.com/safari/">Safari</a>.  Sorry, Internet Explorer!
+Just kidding. I’m not sorry. That’s karma for IE6. ;)</li>
+  <li>Visit <a href="http://openstreetmap.org/">http://openstreetmap.org/</a> and
+create a free account. Log in.</li>
+  <li>Scroll and zoom to a place on the map you wish to edit.</li>
+  <li>Pull down the “Edit” menu, and select “Edit with iD”.</li>
+</ol>
+
+<p><img src="/bend/assets/osm-id-editing/startedit.jpg" alt="Start editing" title="Start editing" /></p>
+
+<p>You’re ready to begin improving the map!</p>
+
+<h3 id="editing-overview">Editing Overview</h3>
+
+<p>You can play around in the editor all you want without impacting the
+live map. There’s undo/redo functionality, and everything stays local to
+you until you hit “Save”.</p>
+
+<p>Once you hit “Save”, your data is merged into the live map data, and a
+re-render of the main map tiles will be queued shortly.</p>
+
+<blockquote>
+  <p>(Technically, it’s only the mapnik (“Standard”) layer that triggers
+immediately, and that only triggers after you zoom in and get the
+tiles again. Hit reload on the browser in the OSM area you just
+edited, then wait a minute and hit reload again. The new edits should
+show.)</p>
+</blockquote>
+
+<p>Start with small edits. Don’t delete anything that you didn’t make
+unless you know what you’re doing. Have fun!</p>
+
+<h3 id="adding-and-editing-points-and-shapes">Adding and Editing Points and Shapes</h3>
+
+<p>There are three main types of things you can edit in iD: points, lines,
+and areas. You can select which you wish to draw with the menu at the
+top of the map. (Hover over the items for tooltips and keyboard
+shortcuts.)</p>
+
+<p><img src="/bend/assets/osm-id-editing/pointlinearea.jpg" alt="Points, Lines, and Areas" title="Points, Lines, and Areas" /></p>
+
+<p>Each of the items in the map database is rendered on the basis of how it
+is “tagged”. Tags are key/value pairs that describe what the road is.
+For instance, a tag might say “this line is highway=residential”, and
+then a renderer will know to draw it with a certain type of line.
+“water=stream” might be drawn with a different type of line.</p>
+
+<blockquote>
+  <p>Technically, there are only two things in the database: nodes and ways
+(which we call “points” and “lines” in iD). An area is just a line
+that’s connected and tagged with an area tag. However, iD
+differentiates lines and areas, so you need to choose the right one
+for what you’re drawing.  E.g. lines for roads and streams, areas for
+city boundaries and lakes. (And when I say there are “only two
+things”, I actually mean there are more than that, but go ahead and
+pretend I didn’t lie there.)</p>
+</blockquote>
+
+<h5 id="adding-points">Adding Points</h5>
+
+<p>A point represents a single thing. Like a bathroom (“toilets”) or a pub
+or a post office. Or a city.</p>
+
+<p>Let’s add a new pub. For the demo, I’ll just add it to the middle of
+nowhere. Remember: you can always undo your changes before you Save.</p>
+
+<p>First, click “Point” to add a new point, then click on the map to add it
+to the map. When added, it has a red outline to let you know that it is
+the currently-selected object.</p>
+
+<p>This adds a point, but it’s not tagged. Let’s tag it as a pub. Click on
+“Search” on the left, and type “pub”. This brings up a list of matches.
+With the new point selected (red outline), click on the “Pub” entry on
+the left.</p>
+
+<p><img src="/bend/assets/osm-id-editing/pub1.jpg" alt="Adding the pub" title="Adding the pub" /></p>
+
+<p>After clicking on “Pub”, a submenu opens in which you can give the pub
+attributes.</p>
+
+<p>In general, all attributes are optional. In this case, we really should
+give it a name so people who look at the map will be able to see which
+pub it is.</p>
+
+<p><img src="/bend/assets/osm-id-editing/pub2.jpg" alt="Adding the pub attributes" title="Adding the pub attributes" /></p>
+
+<p>(Let’s say you tagged it “Pub” and you wanted to change your mind. It’s
+a little counter-intuitive, but you can click on “Pub” again in the
+above image, and it will return to the search screen.)</p>
+
+<p>At this point, if you were to hit “Save”, the changes would be added
+to the database for rendering!</p>
+
+<p>That’s all there is to it!</p>
+
+<h4 id="editing-points">Editing Points</h4>
+
+<p>If you click on a point, a context menu will pop up with additional
+actions you can take. For points, this is simply “Delete”.</p>
+
+<p><img src="/bend/assets/osm-id-editing/pointmenu.jpg" alt="Editing points" title="Editing points" /></p>
+
+<p>You can move a point simply by dragging it to another place.</p>
+
+<p>You can select multiple points by holding down SHIFT while you select
+them.</p>
+
+<h4 id="adding-lines">Adding Lines</h4>
+
+<p>Lines work basically the same way as points, with a few more bells and
+whistles.</p>
+
+<p>Select “Line”, and draw the line out clicking a point at a time. Here
+I’ve found a dirt road outside of Bend, OR that’s missing from OSM data:</p>
+
+<p><img src="/bend/assets/osm-id-editing/line1.jpg" alt="Drawing lines" title="Drawing lines" /></p>
+
+<p>Double-click the last point, or hit ESCAPE to stop drawing. Now you’re
+at the tagging search menu again.</p>
+
+<p>Now, I know from experience that this dirt road is of type “Track”. (See
+the “Tagging” section, below, for how to discover more tags.) Searching
+for “track”, and clicking “Track” will tag this line as a dirt track and
+bring up the track sub-attributes menu.</p>
+
+<p>Remember, all the sub-attributes are optional, including the name.</p>
+
+<h4 id="editing-lines">Editing Lines</h4>
+
+<p>Similar to points, lines have a context menu when you click on them. You
+can straighten them, move them, delete them, and reverse them.</p>
+
+<p><img src="/bend/assets/osm-id-editing/linemenu.jpg" alt="Editing lines" title="Editing lines" /></p>
+
+<p>Reverse? You’ll notice that between the points of the lines, there are
+direction arrows showing which way the line is going. Usually this
+doesn’t matter, but it does in certain cases, e.g. streams, rivers, or
+one-way roads.</p>
+
+<p>If you first select the line, <em>then</em> click on a point on a line, you’ll
+get a different context menu that allows you to split the line at that
+point:</p>
+
+<p><img src="/bend/assets/osm-id-editing/linesplit.jpg" alt="Splitting lines" title="Splitting lines" /></p>
+
+<p>That same submenu also allows you to uncouple crossing lines.</p>
+
+<p>You can drag points of the line around:</p>
+
+<p><img src="/bend/assets/osm-id-editing/linedragpoint.jpg" alt="Moving line points" title="Moving line points" /></p>
+
+<p>And you can grab and drag one of the direction arrows to bisect a line at that
+point:</p>
+
+<p><img src="/bend/assets/osm-id-editing/linebisect.jpg" alt="Bisecting a line" title="Bisecting a line" /></p>
+
+<p>You can select multiple lines by holding down SHIFT while you select
+them. This will bring up another context menu that allows you to merge
+lines</p>
+
+<h4 id="adding-and-editing-areas">Adding and Editing Areas</h4>
+
+<p>An area is just a closed line. Select the “Area” tool and click points
+where you want the area to be. Double-click the last point or hit ESCAPE
+when you’re done.</p>
+
+<p>Here is a lake that hadn’t been added to the database. I traced the
+outline as an area, searched for “lake”, tagged it as a lake, and then
+selected the area to bring up the context menu:</p>
+
+<p><img src="/bend/assets/osm-id-editing/area.jpg" alt="Editing an Area" title="Editing an Area" /></p>
+
+<p>The context menu has options to rotate the entire area, to square the
+corners (useful for buildings), to move it, and to form a perfect circle
+(useful for roundabouts).</p>
+
+<p>But wait a moment… there’s an island in this lake. How do we cut that
+out so it doesn’t render as water?</p>
+
+<p>First, add the island as an area. No need to tag it as anything. Then
+click the island to select it. Then, <em>while holding SHIFT</em>, click on the
+lake. Now both of them are selected, and a new context menu will show
+up. Hit “+” on that menu to join the areas, and the island is magically
+created.</p>
+
+<p><img src="/bend/assets/osm-id-editing/island.jpg" alt="Creating an Island" title="Creating an Island" /></p>
+
+<blockquote>
+  <p>iD is doing a lot of stuff behind the scenes when you do this. It’s
+creating another type of element called a “relation” of
+<code>type=multipolygon</code> that stores the relationship between the island
+area and lake area in the database. Relations can also be used to
+relate multiple roads that are all part of a scenic route. Or to
+relate an intersection with “right turn only”.  Relations are
+powerful, important, and beyond the scope of this tutorial. You can do
+a lot of editing without ever touching them.</p>
+</blockquote>
+
+<h3 id="tagging">Tagging</h3>
+
+<h4 id="tag-overview">Tag overview</h4>
+
+<p>Tags are key=value pairs that are stored in the database for a single
+point, line, or area. There could be zero tags, or there could be many.</p>
+
+<p>The iD editor hides the key=value information from you behind its
+user-friendly UI, but you can see them if you select an object and then
+click “All tags” in the edit sidebar. This will show you the key=value
+pairs, and you can see how they correspond to the values entered in the
+UI:</p>
+
+<p><img src="/bend/assets/osm-id-editing/alltags.jpg" alt="All tags" title="All tags" /></p>
+
+<p>You can also add and remove tags from the “All tags” interface. This is
+particularly useful if you need to enter a tag that’s not exposed in the
+iD UI. You can see, above, for instance, that <code>fee=no</code> is not in the UI.</p>
+
+<h4 id="a-note-on-names">A Note on Names</h4>
+
+<p>When tagging names, the general rule is to use the full name of the
+object, e.g. use “Northwest Milwaukee Avenue”, <em>not</em> “NW Milwaukee Ave”.</p>
+
+<h4 id="which-tag-to-use">Which tag to use?</h4>
+
+<p>How do you know what to search for when tagging? What are the proper
+tags for a parking aisle? For a driveway? For a dirt road? For a
+seasonal stream? For a library? For a cliff? For a meadow?</p>
+
+<p>In iD, it’s always good to search for a particular tag and see what it
+comes up with. If you’re tagging a dam, search for “dam”. That said, you
+might not know what you’re searching for. What’s a dam called where the
+water spills over the top across the full width of the river? (A
+“weir”.)</p>
+
+<p>If in doubt, just tag it with your best guess. You or someone else can
+fix it later. 90% of the work is adding the line or area, so you will
+have made a valuable contribution doing that even if the tagging is
+wrong.</p>
+
+<p>Here is the <a href="http://wiki.openstreetmap.org/wiki/Map_Features">complete list of “official” OSM
+features</a>. Note that
+these are listed as “key=value” pairs; for example, the first one is
+<code>aerialway=cablecar</code>. The third column in the table tells you which
+kinds of entities can take this tag: points, lines, and/or areas.</p>
+
+<p>From the Features page, there will often be links to pages for specific
+types of tagging, e.g. <a href="http://wiki.openstreetmap.org/wiki/Mountain_biking">mountain
+biking</a>. If someone
+wants to render a mountain-biking-specific map, the detailed mountain
+biking tags will enable them to label trail difficulty, trail width,
+etc.</p>
+
+<h4 id="what-if-a-road-is-paved-then-turns-to-dirt-partway-through">What if a road is paved then turns to dirt partway through?</h4>
+
+<p>Each object in the database has its own set of tags. A single line
+cannot be both <code>surface=paved</code> and <code>surface=unpaved</code> at the same time.
+You must split the line into two, per the Editing Lines section, above,
+and tag the ends separately.</p>
+
+<h3 id="image-layers">Image Layers</h3>
+
+<p>You can change the background of the map by clicking the “Background
+settings” button on the right.</p>
+
+<p><img src="/bend/assets/osm-id-editing/backgroundsettings.jpg" alt="Background settings" title="Background settings" /></p>
+
+<p>If a detail is missing on one of the aerial maps, try another to see if
+it is there.</p>
+
+<p>There are also topo maps, the mapnik standard OSM render, and “custom”
+if you have your own map tile server.</p>
+
+<p>Under the maps, there are some overlays that you can put on top of the
+base map.</p>
+
+<p>One of these is the “GPS traces” layer. This is maintained by MapBox and
+is rather old at this point. If you’re looking to trace a GPS path, you
+might want to use the “Local GPX file” layer.</p>
+
+<p>Finally, one of the useful overlay layers is “New &amp; Misaligned TIGER
+Roads”. If you have an unnamed road in OSM, or you’re tracing a road for
+which you don’t know the name, see if you can find it on this layer.
+More information in the TIGER section, below.</p>
+
+<h3 id="tiger--us-census-maps">TIGER–US Census Maps</h3>
+
+<p>The US Census maintains its own set of maps, called the TIGER maps. For
+their purposes, geographic accuracy wasn’t particularly valuable, so the
+maps tended to be fairly <em>wrong</em>.</p>
+
+<p>They’ve since made a large push to make the maps more accurate. However,
+there was a massive import of the old TIGER data into OSM by Dave Hanson
+many years ago, and so that data needed to be manually aligned to aerial
+photos or GPS data. For the entire US. By hand. For urban areas, this is
+largely complete as of 2014.</p>
+
+<h4 id="fixing-tiger-data">Fixing TIGER data</h4>
+
+<p>In this fine example, we have the Bing aerial imagery layer, as well as
+the new TIGER Roads layer activated. The TIGER data overlay is yellow
+lines, as well as large, bold street names that appear on the base map
+near the roads. It looks like there’s a discrepancy between the new
+TIGER data and what’s in OSM.</p>
+
+<p><img src="/bend/assets/osm-id-editing/tiger1.jpg" alt="Missing Road" title="Missing Road" /></p>
+
+<p>In OSM, Whaley Drive heads southwest from Sonoma Street, but TIGER has
+it in a different place.</p>
+
+<p>Furthermore, there’s no road where the OSM data is on the aerial photo.</p>
+
+<p>Does OSM have it wrong? Is the aerial photo old? Is the TIGER data
+wrong? How can you tell without being there?</p>
+
+<p>First, select Whaley Drive and look at “All tags”. There are a ton of
+tags in there that clearly mark it as part of the original TIGER OSM
+import.</p>
+
+<p><img src="/bend/assets/osm-id-editing/tigeralltags.jpg" alt="All tags of a TIGER object" title="All tags of a TIGER object" /></p>
+
+<p>(In these modern times, imports generally do not attach all this
+metadata to the objects, but this was from a while ago.)</p>
+
+<p>So we know the road was part of the automated TIGER import.</p>
+
+<p>But has it been modified since then? Maybe someone with local knowledge
+we don’t have actually modified the line. For us to undo that work would
+be an error. How can we tell?</p>
+
+<p>At the very bottom of the object tags page, there’s link that will take
+us to OSM to check out the details by clicking on “View on
+openstreetmap.org”:</p>
+
+<p><img src="/bend/assets/osm-id-editing/objviewosm.jpg" alt="Getting to the object on OSM" title="Getting to the object on OSM" /></p>
+
+<p>When you click on that, you’ll get an OSM tab that shows more info
+about the line (“way”). We’re looking for if it has been edited, by
+whom, and when:</p>
+
+<p><img src="/bend/assets/osm-id-editing/osmway.jpg" alt="Way details on OSM" title="Way details on OSM" /></p>
+
+<p>It looks like this is version 2, edited 4 years ago by <code>balrog-kun</code>. If
+it hadn’t been touched yet, the only editor would have been
+<code>DaveHansenTiger</code>. So who was <code>balrog-kun</code>, and what did they do?</p>
+
+<p>If you look at the bottom of that column, you’ll see a “View History”
+link. There we can go see what has happened with this element, and that
+might help clarify the story. (Going there reveals the initial import by
+<code>DaveHansenTiger</code>, followed the subsequent edit by <code>balrog-kun</code>.)</p>
+
+<p>But there’s also a changeset number there at the top, 4247780. If you
+click on that, it gives more details about the changeset by
+<code>balrog-kun</code>.</p>
+
+<p><img src="/bend/assets/osm-id-editing/changesetdetail.jpg" alt="Changeset details on OSM" title="Changeset details on OSM" /></p>
+
+<p>The <code>bot=yes</code> tag is a dead giveaway that a human hasn’t been here.
+Looks like the bot went through the database and expanded all the
+abbreviations from the TIGER import.</p>
+
+<p>At this point, I’m confident that no human has reviewed this line, and
+it’s very likely in the wrong place.</p>
+
+<p>So I’ll select the node that joins Whaley to Sonoma, and choose
+“Disconnect” from the context menu. Now I can drop the endpoints of the
+road into the proper place between Sonoma and Viola streets. Then I
+click “Save”, enter a changeset description, and <em>BAM!</em> I’ve improved
+the map!</p>
+
+<h4 id="other-tiger-problems">Other TIGER problems</h4>
+
+<p>There are some other common issues you might run into.</p>
+
+<ul>
+  <li>Roads not aligned well with reality.</li>
+  <li>Old roads on the map that no longer exist.</li>
+  <li>New roads that exist but are not on the map.</li>
+  <li>Roads that are tagged <code>highway=residential</code> when they’re not.</li>
+</ul>
+
+<p>“Residential” was the import default if there wasn’t enough information
+in the TIGER source to determine otherwise. One notable upshot of this
+is that virtually all dirt roads in the forest are <code>highway=residential</code>
+when they should either be <code>highway=track</code> or
+<code>highway=unclassified</code>/<code>surface=unpaved</code>.</p>
+
+<h4 id="using-tiger-to-name-streets">Using TIGER to name streets</h4>
+
+<p>A fairly common case is that there will be some new construction that
+you see on aerial photos but has not been added to OSM.</p>
+
+<p>You can trace the roads, but what are their names?</p>
+
+<p>Fortunately, as we’ve seen, you can just bring up the TIGER map overlay,
+and often find the names there. Don’t forget to use the full street
+name–no abbreviations!</p>
+
+<h3 id="uploading-gps-traces">Uploading GPS Traces</h3>
+
+<p>If you record a GPX file on your GPS that represents a trail or new
+road (or anything else that can’t easily be determined by the aerial
+photos), feel free to add that to the database of GPS traces.</p>
+
+<p>These traces are used especially in the JOSM editor which will show the
+user all GPS traces uploaded to a region for all time. In iD, you’ll
+either have to wait until the OSM traces layer is updated (timeframe
+unknown), or you can take your individual GPX and show it on the map as
+described above.</p>
+
+<h4 id="how-to-upload-a-trace">How to upload a trace</h4>
+
+<p>Click “GPS Traces” at the top of the main OSM web page, then click
+“Upload a trace”.</p>
+
+<p>The description and tags fields are for human reference and are
+freeform.</p>
+
+<p>I suggest “Trackable” for the “Visibility”.</p>
+
+<p>Once you upload the trace, you’ll get an email when it is imported.</p>
+
+<h3 id="additional-links">Additional Links</h3>
+
+<h4 id="bug-tracker-notes">Bug Tracker (Notes)</h4>
+
+<p>If you’re viewing (not editing) the map the website, you can click the
+“layers” icon on the right side of the screen. On that popup, you can
+check “Map Notes”.</p>
+
+<p>This is the “bug tracker” for OSM. You can comment on or resolve notes
+that are on the map. Only resolve them if you are sure you have actually
+resolved it. Often local knowledge is required.</p>
+
+<p>To add a new note, the “add note” icon is four icons down from the
+“layers” icon on the map view right sidebar.</p>
+
+<h4 id="map-roulette">Map Roulette</h4>
+
+<p><a href="http://maproulette.org/">Map Roulette</a> will give you random things to
+fix on the map. Some of them you’ll be able to fix, some of them you
+won’t be sure of and you’ll skip. If you want to pour random energy into
+the map, this is a good site to do it on.</p>
+
+<h4 id="strava-slide">Strava Slide</h4>
+
+<p>The elves as Strava Labs have developed a pretty fantastic tool to
+automatically bend lines around uploaded GPS data. And since Strava is a
+running/biking exercise tracking site, they have <em>a lot</em> of GPS data.</p>
+
+<p>It’s their <a href="http://labs.strava.com/slide/">Slide</a> tool, and it’s built
+as a hacked-up version of the iD editor.</p>
+
+<p>To use, you just select a line, and then choose “Slide geometry to
+Strava heatmap” from the context menu that pops up.</p>
+
+<p><em>NOTE</em>: often the aerial photos are better for drawing trails than the
+GPS data. But if you can’t see the trail from the air (because of the
+forest, say), then the Slide tool is about the best result you can get.</p>
+
+<p>If there’s just one section of a trail that needs Sliding, you can split
+it into its own line, then apply the Slide tool, then merge it back
+together with the lines it used to be attached to.</p>
+
+<h4 id="josm">JOSM</h4>
+
+<p><a href="https://josm.openstreetmap.de/">JOSM</a> is an offline editor, meaning
+you’ll download a chosen, rectangular chunk of data, edit it, and then
+upload it to the server later. This differs from iD, which just allows
+you to edit whereever you are, but requires you be online.</p>
+
+<p>JOSM is a much, much more featureful and powerful editor than iD, with a
+correspondingly steeper learning curve, and is generally used by serious
+mappers. That said, I still use iD for quick fixes.</p>
+
+<p>Have fun!</p>
+
+    <div class='pad1y keyline-top'>
+      <strong class='quiet small block space-bottom1'>Posted Dec 03 2014 by Beej Jorgensen</strong>
+    </div>
+
+  
+</div>
+
+<div class='space-bottom4'>
+
+  
+
+    <h2><a href='/bend/updates/2014/12/02/upcoming-meeting-reminder/'>Reminder: Next meeting is Dec. 4</a></h2>
+    <p>Just a reminder that the next Maptime Bend meetup is Thursday, Dec. 4 at McMenamins! RSVP with the button to the right of this post!</p>
+
+    <div class='pad1y keyline-top'>
+      <strong class='quiet small block space-bottom1'>Posted Dec 02 2014 by Andy Zeigert</strong>
+    </div>
+
+  
+</div>
+
+<div class='space-bottom4'>
+
+  
+
+    <h2><a href='/bend/updates/2014/11/15/second-meeting-a-success/'>Second meeting a success</a></h2>
+    <p>The second Maptime Bend meeting was a success! Turnout was good and we introduced Leaflet, which led to a lot of great discussion. We had several colorful maps by the end of the night. Stay tuned for information about next month’s meeting, where we’ll be going over the basics of OpenStreetMap.</p>
+
+<p><img src="/bend/assets/meeting2.jpg" alt="The second meeting of Maptime Bend had a slightly larger turnout!" /></p>
+
+    <div class='pad1y keyline-top'>
+      <strong class='quiet small block space-bottom1'>Posted Nov 15 2014 by Andy Zeigert</strong>
+    </div>
+
+  
+</div>
+
+
+<!-- Pagination links -->
+<div class='col12 center small strong space pad2y'>
+  
+  
+    <a href='/bend/page2' class='button fill-blue rcon right-arrow'>Older</a>
+  
+</div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class='fill-light pad2y'>
+    <div class='limiter center small quiet'>
+      <p>This website is <a href='http://github.com/maptime/bend/'>open source</a> and you can improve it. Learn more about contributing <a href='https://guides.github.com/activities/forking/'>here</a>.</p>
+   </div>
+  </footer>
+
+<script src='/bend/js/jquery.min.js'></script>
+<script src='/bend/js/underscore.min.js'></script>
+<script src='/bend/site.js'></script>
+<script>
+  var rsvp = document.getElementById('rsvpdate');
+  var date,formatted,link;
+  ''
+    date = '2015,1,7';
+    formatted = 'Wednesday, Jan 07 2015';
+    link = 'http://www.meetup.com/maptimebend/events/219266930/';
+  ''
+
+  if (date && new Date().getTime() <= new Date(date).getTime() + (24 * 60 * 60 * 1000)) {
+    rsvp.innerHTML = '<h3>' + formatted + '</h3>' +
+    '<a class="button fill-orange block" href=' + link + '>RSVP</a>';
+  } else {
+    rsvp.innerHTML = '<h3>TBA</h3>';
+  }
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55628983-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

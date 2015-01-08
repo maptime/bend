@@ -1,0 +1,504 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <meta charset='UTF-8'/>
+  <meta name='twitter:site' content='@maptimebend' />
+  <meta property='og:site_name' content='Maptime Bend' />
+  <meta name='twitter:url' content='' />
+  <meta property='og:url' content='' />
+  <meta name='twitter:title' content='The fault in our parks: Leaflet mapping crash course' />
+  <meta property='og:title' content='The fault in our parks: Leaflet mapping crash course' />
+  <meta name='twitter:description' content='Creating a Leaflet map and adding some data Perhaps you’ve had some experience putting together Google maps using lists of addresses or other kinds of location information, but you’re interested...' />
+  <meta property='og:description' content='Creating a Leaflet map and adding some data Perhaps you’ve had some experience putting together Google maps using lists of addresses or other kinds of location information, but you’re interested...' />
+  
+  <title>Maptime Bend | The fault in our parks: Leaflet mapping crash course</title>
+  <link rel='stylesheet' href='/bend/site.css' type='text/css'/>
+  <link rel='shortcut icon' href='/bend/img/favicon.png' type='image/x-icon' />
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
+</head>
+<body>
+  <div class='masthead fill-blue'>
+    <div class='fill-darken0 pad1y strong dark'>
+      <div class='limiter'>
+        <a href='http://maptime.io/'>maptime.io</a>
+      </div>
+    </div>
+  </div>
+  <header class='fill-blue'>
+    <div class='limiter contain'>
+      <a href='/bend/' class='sprite maptime pin-left'>Maptime</a>
+      <div class='col12 clearfix pad2y'>
+        <div class='round pad2 col6 margin6 strong dark fill-darken0 fill-chapter row4 truncate contain'>
+          <h1><a class='dark contain z1' href='/bend/'>Maptime Bend</a></h1>
+          <div class='pin-right pad4x pad1y hide-mobile'>
+            <span class='sprite marker'></span>
+          </div>
+          <a href='https://twitter.com/maptimebend/' class='contain z1 fill-blue button'>
+            @maptimebend on Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class='limiter pad4y'>
+    <div class='col12 clearfix'>
+      <aside class='col3 fr space-bottom2 sidebar'>
+        <div class='fill-purple strong dark round pad2 space-bottom2'>
+          <h3>The next Maptime Bend is:</h3>
+          <div id='rsvpdate'></div>
+        </div>
+
+        <div class='hide-mobile'>
+          <div class='popup-group'>
+            <a href='https://github.com/maptime/bend/' class='col12 space-bottom2 button'>Watch these events</a>
+            <div class='popup popup-big keyline-all pad1 small round'>
+              <ol class='space-bottom1'>
+                <li>1. Click the <strong>Watch these events</strong> button.</li>
+                <li>2. Login to GitHub or signup for an account.</li>
+                <li>3. Click the <strong>Watch</strong> button on the repo.</li>
+              </ol>
+              <div class='center'>
+                <img src='/bend/img/watchrepo.png' alt='Watch repo' />
+              </div>
+            </div>
+          </div>
+
+          <div class='followers'></div>
+          <div class='center'>
+            <div class='pad0y space-bottom2'>
+              <a class='small' href='https://github.com/maptime/bend/watchers'>View all</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class='col8 margin2r prose content'>
+        <h2>The fault in our parks: Leaflet mapping crash course</h2>
+<h2 id="creating-a-leaflet-map-and-adding-some-data">Creating a Leaflet map and adding some data</h2>
+
+<p>Perhaps you’ve had some experience putting together Google maps using lists of addresses or other kinds of location information, but you’re interested in the nitty gritty of creating a map using open-source tools. This tutorial is intended to quickly familiarize you with the tools needed to make custom maps using open-source data. </p>
+
+<h3 id="what-well-be-using">What we’ll be using</h3>
+
+<p>The main tool we’ll be using is <a href="http://leafletjs.com" title="Leaflet.js">Leaflet.js</a>, a javascript library that lets you quickly build a map using just a text editor. Any text editor will do, but it helps to use one that’s designed for editing code. A good, free editor is <a href="http://brackets.io" title="Brackets">Brackets</a>. The other thing you’ll probably want to have is a <a href="https://github.com" title="Github">Github</a> account. You won’t need it to write any of the code, but it’s a good place to keep code and data, and you can make a copy (or clone) <a href="https://github.com/MaptimeBend/faultparks">the data used in this project</a> right to your own account.</p>
+
+<p>For data, we’ll be using a polygon layer of Bend Parks &amp; Recreation District properties and a polyline layer of fault lines that run through Central Oregon, both stored in GeoJSON files. JSON stands for JavaScript Object Notation, and it’s basically an easy-to-read format for storing data in a way that javascript can readily access. The Geo part of GeoJSON just means that location data is stored with other item properties.</p>
+
+<h3 id="download-the-data-and-set-up-a-workspace">1. Download the data and set up a workspace</h3>
+
+<p>The map we’ll be building uses static map tiles and then builds vector symbols on top using GeoJSON files. Create a directory called <code>/faultparks</code> on your computer. Create a <code>/data</code> directory inside. Then, open your code editor and create a new html file and save it to <code>/faultparks/index.html</code>.</p>
+
+<p>Download the <a href="https://github.com/MaptimeBend/faultparks">data from our Github page</a> and copy the <code>.js</code> files to your <code>/data</code> folder. Everything else you’ll need can be copied from this page.</p>
+
+<h3 id="add-the-necessary-code-to-your-indexhtml">2. Add the necessary code to your <code>index.html</code></h3>
+
+<p>In order to create a map on our html page using Leaflet, we need to include the Leaflet javascript library in the head element.</p>
+
+<p><code>
+&lt;script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"&gt;&lt;/script&gt;
+</code></p>
+
+<p>We also need to include the Leaflet CSS file in the head element.</p>
+
+<p><code>
+&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /&gt;
+</code></p>
+
+<p>Now we need to create a <code>div</code> element in our <code>body</code> element with a specific <code>id</code> that we’ll reference in our javascript. Nothing goes into the <code>div</code> now, but our javascript will put the map there later.</p>
+
+<p><code>
+&lt;div id="map"&gt;&lt;/div&gt;
+</code></p>
+
+<p>In addition, let’s add some CSS to our head element that tells the map to be 400 pixels tall. The width will fill the width of the browser window, or in the case of this page, the parent element, which is this article.</p>
+
+<p><code>
+&lt;style type="text/css"&gt;
+#map { 
+  height: 600px;
+}
+&lt;/style&gt;
+</code></p>
+
+<p>Now we’ll need to actually write the javascript that creates the map. After our <code>&lt;div id="map"&gt;&lt;/div&gt;</code> element, let’s open a script element and start adding the Leaflet-specific javascript that builds the map:</p>
+
+<p><code>
+  &lt;script type="text/javascript"&gt;
+    var map = L.map('map').setView([44.05, -121.30], 11);
+  &lt;/script&gt;
+</code></p>
+
+<p>The numbers after the <code>setView</code> item tell the map that we want it centered on those geographic coordinates (those are near the center of Bend) and that we want the zoom level to be 11 (that’s enough to show all of Bend). There are other ways to determine how your map is centered by default, but this is an easy one.</p>
+
+<p>At this point, we technically have a working map. But it will show up with just the zoom buttons and nothing else. We haven’t told it want we want to display yet.</p>
+
+<p>An essential item for any webmap is a set of map tiles. Map tiles <a href="http://wiki.openstreetmap.org/wiki/Tiles" title="More about map tiles on OpenStreetMap wiki">are a way</a> to break up a map into smaller chunks that are easier for a web browser to load. There are lots of map tile sets that you can use, but let’s go with one from <a href="http://maps.stamen.com/" title="Stamen">Stamen</a> for this example.</p>
+
+<p>Add this code to your head tag, just after the Leaflet code:</p>
+
+<p><code>
+&lt;script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"&gt;&lt;/script&gt;
+</code></p>
+
+<p>Now let’s create a layer using a Stamen tile set called Toner Lite. It’s a nice high-contrast base map that our colored parks and fault lines will stand out on later.</p>
+
+<p><code>
+var layer = new L.StamenTileLayer("toner-lite");
+</code></p>
+
+<p>Now we need to tell the page to go ahead and add that layer to our map.</p>
+
+<p><code>
+map.addLayer(layer);
+</code></p>
+
+<p>Here’s what your index.html page should look like at this point:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://cdn.leafletjs.com/leaflet-0.7/leaflet.css&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;http://maps.stamen.com/js/tile.stamen.js?v1.3.0&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+    <span class="nf">#map</span> <span class="p">{</span>
+        <span class="k">height</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;map&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+      <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">&#39;map&#39;</span><span class="p">).</span><span class="nx">setView</span><span class="p">([</span><span class="mf">44.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">121.30</span><span class="p">],</span> <span class="mi">11</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">StamenTileLayer</span><span class="p">(</span><span class="s2">&quot;toner-lite&quot;</span><span class="p">);</span>
+      <span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">layer</span><span class="p">);</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+<p>Congratulations! You’ve now built a complete Leaflet map. That code should render something like this:</p>
+
+<div id="map1" style="height: 250px"></div>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+<script type="text/javascript">
+    var map1 = L.map('map1', {scrollWheelZoom: false}).setView([44.05, -121.30], 11);
+    var layer = new L.StamenTileLayer("toner-lite");
+    map1.addLayer(layer);
+  </script>
+
+<h3 id="adding-markers">3. Adding markers</h3>
+
+<p>Leaflet allows you to add symbols to your map just by entering a line of code. For example, this bit of code drops a pin marker in the center of our map view:</p>
+
+<p><code>
+  var marker = L.marker([44.05, -121.30]).addTo(map);
+</code></p>
+
+<p>Go ahead, try it. You should get something like this:</p>
+
+<div id="map2" style="height: 250px"></div>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+<script type="text/javascript">
+    var map2 = L.map('map2', {scrollWheelZoom: false}).setView([44.05, -121.30], 11);
+    var layer = new L.StamenTileLayer("toner-lite");
+    map2.addLayer(layer);
+    var marker = L.marker([44.05, -121.30]).addTo(map2);
+  </script>
+
+<p>The marker symbol is determined by the Leaflet default. You <a href="http://leafletjs.com/reference.html#marker" title="Marker API on Leafletjs.com">can customize markers for your map</a>, if you’d like. You can also bind popup information to that marker by adding a little extra code before the final semicolon:</p>
+
+<p><code>
+var marker = L.marker([44.05, -121.30]).addTo(map)
+  .bindPopup('Sort of the center of Bend.')
+  .openPopup;
+</code></p>
+
+<p>Now you can click on the marker and see the popup:</p>
+
+<div id="map3" class="map" style="height: 250px"></div>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+<script type="text/javascript">
+    var map3 = L.map('map3', {scrollWheelZoom: false}).setView([44.05, -121.30], 11);
+    var layer = new L.StamenTileLayer("toner-lite");
+    map3.addLayer(layer);
+    
+    var marker = L.marker([44.05, -121.30]).addTo(map3)
+    .bindPopup('Sort of the center of Bend.')
+    .openPopup;
+  </script>
+
+<p>We can add lots of markers to our map this way, including lines and polygons (See the <a href="http://leafletjs.com/examples.html">Leaflet tutorials</a> for more on that), but what we really want to do is load some external data to our map. Feel free to remove that marker from your map now, or leave it if you want.</p>
+
+<h3 id="geojson-basics">4. GeoJSON basics</h3>
+
+<p>From <a href="http://geojson.org">http://geojson.org</a> (via <a href="http://leafletjs.com/examples/geojson.html">Leafletjs.com</a>):</p>
+
+<blockquote>
+  <p>GeoJSON is a format for encoding a variety of geographic data structures. A GeoJSON object may represent a geometry, a feature, or a collection of features. GeoJSON supports the following geometry types: Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon, and GeometryCollection. Features in GeoJSON contain a geometry object and additional properties, and a feature collection represents a list of features.</p>
+</blockquote>
+
+<p>That really just means that it’s a file format for storing geographic data, and Leaflet plays really well with it. Here’s an example GeoJSON feature:</p>
+
+<p><code>
+var geojsonFeature = {
+  "type": "Feature",
+  "properties": {
+      "name": "Juniper Park",
+      "popupContent": "Juniper Park in Bend, Oregon"
+  },
+  "geometry": {
+      "type": "Point",
+      "coordinates": [44.03, -121.17]
+  }
+};
+</code></p>
+
+<p>For this exercise, the GeoJSON files for the Bend parks ( <code>parks.js</code> ) and faults ( <code>faults.js</code> ) have already been created, and we’ll load those into our Leaflet map. They’re currently stored in <code>.js</code> files because they include the <code>var =</code> at the beginning and are loaded as separate scripts. Think of them as separate mini programs that declare the name of the object and then list its contents in GeoJSON. We’re basically linking to that in our program.</p>
+
+<h3 id="loading-the-parks-and-faults">5. Loading the parks and faults</h3>
+
+<p>We need to call the <code>.js</code> files like we would any other external script, so add this right below your <code>&lt;div id="map"&gt;&lt;/div&gt;</code>:</p>
+
+<p><code>
+  &lt;script src="data/parks.js"&gt;&lt;/script&gt;
+</code></p>
+
+<p>Next we tell our map to load the data onto our map. We pass the name of the variable created at the beginning of our <code>.js</code> file, in this case “parks”:</p>
+
+<p><code>
+  L.geoJson(parks).addTo(map);
+</code></p>
+
+<p>You should end up with something like this:</p>
+
+<div id="map4" style="height: 250px"></div>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+<script src="/bend/assets/data/parks.js"></script>
+
+<script type="text/javascript">
+    var map4 = L.map('map4', {scrollWheelZoom: false}).setView([44.05, -121.30], 11);
+    var layer = new L.StamenTileLayer("toner-lite");
+    map4.addLayer(layer);
+    L.geoJson(parks).addTo(map4);
+</script>
+
+<p>The parks are there, but they have the default appearance assigned by Leaflet. We can easily change their appearance by passing some options along with <code>parks</code>:</p>
+
+<p><code>
+L.geoJson(parks, {
+  style: { // First item in the array is style, whose property is another array containing...
+    "fillColor": "green", // Fill and stroke color
+    "weight": 0, // Stroke weight, zero here so we just have a fill
+    "fillOpacity": 0.6 // This gives the fill a 60% transparency
+  } 
+}).addTo(map);
+</code></p>
+
+<p>The last thing we want to do is add the faults. Let’s add them and style them all in one step:</p>
+
+<p><code>
+&lt;script src="data/faults.js"&gt;&lt;/script&gt; // Add this right below parks.js...
+</code></p>
+
+<p><code>
+L.geoJson(faults, { // ...and this right after our previous geoJson call
+  style: {
+    "color": "red",
+    "weight": 1.5,
+    "opacity": 0.8
+  }
+}).addTo(map);
+</code></p>
+
+<p>This should add our faults layer and give it a slightly transparent red line symbol. Our final map should look something like this:</p>
+
+<div id="map5" style="height: 250px"></div>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+<script src="/bend/assets/data/parks.js"></script>
+
+<script src="/bend/assets/data/faults.js"></script>
+
+<script type="text/javascript">
+    var map5 = L.map('map5', {scrollWheelZoom: false}).setView([44.05, -121.30], 11);
+    var layer = new L.StamenTileLayer("toner-lite");
+    map5.addLayer(layer);
+    L.geoJson(parks, {
+      style: {
+        "fillColor": "green",
+        "weight": 0,
+        "fillOpacity": 0.6
+      } 
+    }).addTo(map5);
+    L.geoJson(faults, {
+      style: {
+        "color": "red",
+        "weight": 1.5,
+        "opacity": .8
+      }
+    }).addTo(map5);
+</script>
+
+<p>Congratulations! You’ve created a nice Leaflet map that lets us compare Bend parks with known fault lines. Note: Most of these fault lines haven’t slipped in thousands of years and never did much anyway.</p>
+
+<h3 id="extra-credit-adding-popups">6. Extra credit: Adding popups</h3>
+
+<p>It’s not hard to add another option to our GeoJSON layer calls that picks up info from the GeoJSON properties and displays it in a popup. Let’s take a look at our <code>.js</code> files and find the properties for the names of each feature. Once we have the property name, we can add it in a popup quite easily:</p>
+
+<p><code>
+    L.geoJson(parks, {
+    style: {
+      "fillColor": "green",
+      "weight": 0,
+      "fillOpacity": 0.6
+    },
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(feature.properties.Park_Name);
+    }
+  }).addTo(map);
+</code></p>
+
+<p>The property for each feature in the GeoJson file is “Park_Name”. So we’re telling the map that for each feature, look at its properties and display the one called “Park_Name.” We’ll do the same for the faults, except in this case the fault name is under the property “NAME.”</p>
+
+<p><code>
+    L.geoJson(faults, {
+      style: {
+        "color": "red",
+        "weight": 1.5,
+        "opacity": .8
+      },
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.NAME);
+      }
+    }).addTo(map);
+</code></p>
+
+<p>This gives us a map that shows Bend’s parks and the faults that run through them, and we can click on each feature to see its name.</p>
+
+<div id="map6" style="height: 250px"></div>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+<script src="/bend/assets/data/parks.js"></script>
+
+<script src="/bend/assets/data/faults.js"></script>
+
+<script type="text/javascript">
+  var map6 = L.map('map6', {scrollWheelZoom: false}).setView([44.05, -121.30], 11);
+  var layer = new L.StamenTileLayer("toner-lite");
+  map6.addLayer(layer);
+  L.geoJson(parks, {
+    style: {
+      "fillColor": "green",
+      "weight": 0,
+      "fillOpacity": 0.6
+    },
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(feature.properties.Park_Name);
+    }
+  }).addTo(map6);
+  L.geoJson(faults, {
+    style: {
+      "color": "red",
+      "weight": 1.5,
+      "opacity": .8
+    },
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(feature.properties.NAME);
+    }
+  }).addTo(map6);
+</script>
+
+<p>This tutorial only scratches the surface of the Leaflet javascript library. Leaflet is designed to be easy to learn and quick to implement, and above all is completely open source.</p>
+
+
+
+<div id='disqus_thread'></div>
+<script>
+  var disqus_shortname = 'maptimebend';
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55628983-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class='fill-light pad2y'>
+    <div class='limiter center small quiet'>
+      <p>This website is <a href='http://github.com/maptime/bend/'>open source</a> and you can improve it. Learn more about contributing <a href='https://guides.github.com/activities/forking/'>here</a>.</p>
+   </div>
+  </footer>
+
+<script src='/bend/js/jquery.min.js'></script>
+<script src='/bend/js/underscore.min.js'></script>
+<script src='/bend/site.js'></script>
+<script>
+  var rsvp = document.getElementById('rsvpdate');
+  var date,formatted,link;
+  ''
+    date = '2015,1,7';
+    formatted = 'Wednesday, Jan 07 2015';
+    link = 'http://www.meetup.com/maptimebend/events/219266930/';
+  ''
+
+  if (date && new Date().getTime() <= new Date(date).getTime() + (24 * 60 * 60 * 1000)) {
+    rsvp.innerHTML = '<h3>' + formatted + '</h3>' +
+    '<a class="button fill-orange block" href=' + link + '>RSVP</a>';
+  } else {
+    rsvp.innerHTML = '<h3>TBA</h3>';
+  }
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55628983-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

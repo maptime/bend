@@ -1,0 +1,29 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Name": "Charcoal Cave", "Description": "Access to unnamed cave #1 via northeast wall." }, "geometry": { "type": "Point", "coordinates": [ -121.162387, 43.90277, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Arnold Ice Cave", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.158986, 43.905275, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Unnamed cave #1", "Description": "Access to unnamed cave #2 via north wall. Also access to Charcoal cave via opening in south wall." }, "geometry": { "type": "Point", "coordinates": [ -121.161861, 43.903497, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Unnamed cave #2", "Description": "Access to unnamed cave #1 via south wall." }, "geometry": { "type": "Point", "coordinates": [ -121.161926, 43.903961, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Unnamed collapse", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.159608, 43.905754, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Collapsed pond # 1", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.146165, 43.909619, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Unnamed collapse", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.144111, 43.911451, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Deg cave", "Description": "Location approximated" }, "geometry": { "type": "Point", "coordinates": [ -121.143923, 43.912935, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Bat cave", "Description": "Location approximated." }, "geometry": { "type": "Point", "coordinates": [ -121.144921, 43.917835, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Wind Cave", "Description": "Closed to cavers." }, "geometry": { "type": "Point", "coordinates": [ -121.14374, 43.919102, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Dark Hole", "Description": "a.k.a Wind Cave skylight." }, "geometry": { "type": "Point", "coordinates": [ -121.14373, 43.920223, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Collapsed pond #2", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.134245, 43.922642, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Unnamed cave # 3", "Description": "Location approximated." }, "geometry": { "type": "Point", "coordinates": [ -121.1458, 43.910377, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Pictograph Cave", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.130877, 43.923569, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Collapsed pond # 3", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.117272, 43.924991, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Charcoal Cave # 2", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.116436, 43.925764, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Collapsed pond # 4", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.114569, 43.926691, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Stookey Ranch Cave", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.113431, 43.927263, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Collapsed pond # 5", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.106522, 43.930137, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Boyd Cave", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.198256, 43.942195, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Skeleton Cave", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.177509, 43.950293, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Unnamed collapse?", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -121.150443, 43.908075, 0.0 ] } }
+]
+}
