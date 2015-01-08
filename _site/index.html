@@ -253,8 +253,27 @@ I am not sure about you but I am not a fan of the mauve color QGIS randomly sele
   <li>Go to the <a href="http://overpass-turbo.eu/">Overpass website</a>.  Overpass is amazing.  Lets dig deeper.</li>
   <li>I want to extract all lines (known in OSM as ways) that have been tagged as a bike path.</li>
   <li>Zoom to Bend.</li>
-  <li>Enter the following text to the right panel
-<img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.45.48 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
+  <li>Enter the following text to the left panel</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;osm-script</span> <span class="na">output=</span><span class="s">&quot;json&quot;</span> <span class="na">timeout=</span><span class="s">&quot;25&quot;</span><span class="nt">&gt;</span>
+
+  <span class="c">&lt;!-- bike routes --&gt;</span>
+  <span class="nt">&lt;query</span> <span class="na">type=</span><span class="s">&quot;way&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;has-kv</span> <span class="na">k=</span><span class="s">&quot;bicycle&quot;</span> <span class="na">regv=</span><span class="s">&quot;^(yes)$&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;has-kv</span> <span class="na">k=</span><span class="s">&quot;highway&quot;</span> <span class="na">regv=</span><span class="s">&quot;^(path)$&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;bbox-query</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/query&gt;</span>
+
+
+
+  <span class="c">&lt;!-- print results --&gt;</span>
+  <span class="nt">&lt;print</span> <span class="na">mode=</span><span class="s">&quot;body&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;recurse</span> <span class="na">type=</span><span class="s">&quot;down&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;print</span> <span class="na">mode=</span><span class="s">&quot;skeleton&quot;</span> <span class="na">order=</span><span class="s">&quot;quadtile&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/osm-script&gt;</span></code></pre></div>
+
+<ul>
   <li>Run the Query and Export a GEOJSON file
 <img src="/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.48.23 PM.png" alt="QGIS FTW" title="QGIS FTW" /></li>
   <li>Add the .geojson file that you downloaded to your computer to QGIS.  Symbolize to your heart content.</li>
