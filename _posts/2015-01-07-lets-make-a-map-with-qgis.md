@@ -168,7 +168,7 @@ As we learned in our previous meetup OpenStreetMap is a treasure trove of spatia
 * Zoom to Bend.
 * Enter the following text to the left panel
 
-{% highlight %}
+{% highlight html %}
 
 <osm-script output="json" timeout="25">
 
