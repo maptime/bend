@@ -167,7 +167,9 @@ As we learned in our previous meetup OpenStreetMap is a treasure trove of spatia
 * I want to extract all lines (known in OSM as ways) that have been tagged as a bike path.
 * Zoom to Bend.
 * Enter the following text to the left panel
+
 {% raw %}
+
 <osm-script output="json" timeout="25">
 
   <!-- bike routes -->
@@ -186,6 +188,7 @@ As we learned in our previous meetup OpenStreetMap is a treasure trove of spatia
 </osm-script>
 
 {% endraw %}
+
 * Run the Query and Export a GEOJSON file
 ![QGIS FTW]({{ site.url }}/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.48.23 PM.png "QGIS FTW")
 * Add the .geojson file that you downloaded to your computer to QGIS.  Symbolize to your heart content.
