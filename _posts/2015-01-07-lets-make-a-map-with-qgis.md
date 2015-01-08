@@ -168,7 +168,7 @@ As we learned in our previous meetup OpenStreetMap is a treasure trove of spatia
 * Zoom to Bend.
 * Enter the following text to the left panel
 
-{% raw %}
+{% highlight xml %}
 
 <osm-script output="json" timeout="25">
 
@@ -176,7 +176,7 @@ As we learned in our previous meetup OpenStreetMap is a treasure trove of spatia
   <query type="way">
     <has-kv k="bicycle" regv="^(yes)$"/>
     <has-kv k="highway" regv="^(path)$"/>
-    <bbox-query {{bbox}}/>
+    <bbox-query '''{{bbox}}'''/>
   </query>
 
 
@@ -187,7 +187,7 @@ As we learned in our previous meetup OpenStreetMap is a treasure trove of spatia
   <print mode="skeleton" order="quadtile"/>
 </osm-script>
 
-{% endraw %}
+{% endhighlight %}
 
 * Run the Query and Export a GEOJSON file
 ![QGIS FTW]({{ site.url }}/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.48.23 PM.png "QGIS FTW")
