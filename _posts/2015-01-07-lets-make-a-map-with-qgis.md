@@ -169,7 +169,6 @@ As we learned in our previous meetup OpenStreetMap is a treasure trove of spatia
 * Enter the following text to the left panel
 
 {% highlight %}
-
 <osm-script output="json" timeout="25">
 
   <!-- bike routes -->
@@ -186,7 +185,6 @@ As we learned in our previous meetup OpenStreetMap is a treasure trove of spatia
   <recurse type="down"/>
   <print mode="skeleton" order="quadtile"/>
 </osm-script>
-
 {% endhighlight %}
 
 * Run the Query and Export a GEOJSON file
