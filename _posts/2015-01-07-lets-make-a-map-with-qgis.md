@@ -168,26 +168,7 @@ As we learned in our previous meetup OpenStreetMap is a treasure trove of spatia
 * Zoom to Bend.
 * Enter the following text to the left panel
 
-{% highlight html %}
-
-<osm-script output="json" timeout="25">
-
-  <!-- bike routes -->
-  <query type="way">
-    <has-kv k="bicycle" regv="^(yes)$"/>
-    <has-kv k="highway" regv="^(path)$"/>
-    <bbox-query {{bbox}}/>
-  </query>
-
-
-
-  <!-- print results -->
-  <print mode="body"/>
-  <recurse type="down"/>
-  <print mode="skeleton" order="quadtile"/>
-</osm-script>
-
-{% endhighlight %}
+{% gist e4cf5805f46553ce0b02 %}
 
 * Run the Query and Export a GEOJSON file
 ![QGIS FTW]({{ site.url }}/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.48.23 PM.png "QGIS FTW")

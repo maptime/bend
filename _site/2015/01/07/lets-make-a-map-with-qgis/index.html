@@ -250,22 +250,7 @@ I am not sure about you but I am not a fan of the mauve color QGIS randomly sele
   <li>Enter the following text to the left panel</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;osm-script</span> <span class="na">output=</span><span class="s">&quot;json&quot;</span> <span class="na">timeout=</span><span class="s">&quot;25&quot;</span><span class="nt">&gt;</span>
-
-  <span class="c">&lt;!-- bike routes --&gt;</span>
-  <span class="nt">&lt;query</span> <span class="na">type=</span><span class="s">&quot;way&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;has-kv</span> <span class="na">k=</span><span class="s">&quot;bicycle&quot;</span> <span class="na">regv=</span><span class="s">&quot;^(yes)$&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;has-kv</span> <span class="na">k=</span><span class="s">&quot;highway&quot;</span> <span class="na">regv=</span><span class="s">&quot;^(path)$&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;bbox-query</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/query&gt;</span>
-
-
-
-  <span class="c">&lt;!-- print results --&gt;</span>
-  <span class="nt">&lt;print</span> <span class="na">mode=</span><span class="s">&quot;body&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;recurse</span> <span class="na">type=</span><span class="s">&quot;down&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;print</span> <span class="na">mode=</span><span class="s">&quot;skeleton&quot;</span> <span class="na">order=</span><span class="s">&quot;quadtile&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/osm-script&gt;</span></code></pre></div>
+<script src="https://gist.github.com/e4cf5805f46553ce0b02.js"> </script>
 
 <ul>
   <li>Run the Query and Export a GEOJSON file
