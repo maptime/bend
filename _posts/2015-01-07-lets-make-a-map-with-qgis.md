@@ -175,7 +175,7 @@ As we learned in our previous meetup OpenStreetMap is a treasure trove of spatia
   <query type="way">
     <has-kv k="bicycle" regv="^(yes)$"/>
     <has-kv k="highway" regv="^(path)$"/>
-    <bbox-query '''{{bbox}}'''/>
+    <bbox-query {{bbox}}/>
   </query>
 
 
