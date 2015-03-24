@@ -8,8 +8,8 @@
   <meta property='og:url' content='' />
   <meta name='twitter:title' content='' />
   <meta property='og:title' content='' />
-  <meta name='twitter:description' content='{% for item in paginator.posts %} &amp;lt;div class=&#39;space-bottom4&#39;&amp;gt; {% if item.category == ‘event’ %} &amp;lt;h2&amp;gt;&amp;lt;a href=&#39;{{site.baseurl}}{{item.url}}&#39;&amp;gt;{{item.title}}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt; {{item.content}} &amp;lt;div class=&#39;keyline-all round pad2 col12 clearfix&#39;&amp;gt; &amp;lt;div class=&#39;col8 pad0y&#39;&amp;gt; Join us: &amp;lt;span class=&#39;quiet&#39;&amp;gt;{{item.date...' />
-  <meta property='og:description' content='{% for item in paginator.posts %} &amp;lt;div class=&#39;space-bottom4&#39;&amp;gt; {% if item.category == ‘event’ %} &amp;lt;h2&amp;gt;&amp;lt;a href=&#39;{{site.baseurl}}{{item.url}}&#39;&amp;gt;{{item.title}}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt; {{item.content}} &amp;lt;div class=&#39;keyline-all round pad2 col12 clearfix&#39;&amp;gt; &amp;lt;div class=&#39;col8 pad0y&#39;&amp;gt; Join us: &amp;lt;span class=&#39;quiet&#39;&amp;gt;{{item.date...' />
+  <meta name='twitter:description' content='{% for item in paginator.posts %} {% if item.category == &#39;event&#39; %} {{item.title}} {{item.content}} Join us: {{item.date | date:&quot;%A, %b %d %Y&quot;}} RSVP {% else %} {{item.title}} {{item.content}} Posted {{item.date...' />
+  <meta property='og:description' content='{% for item in paginator.posts %} {% if item.category == &#39;event&#39; %} {{item.title}} {{item.content}} Join us: {{item.date | date:&quot;%A, %b %d %Y&quot;}} RSVP {% else %} {{item.title}} {{item.content}} Posted {{item.date...' />
   
   <title>Maptime Bend | </title>
   <link rel='stylesheet' href='/bend/site.css' type='text/css'/>
@@ -80,10 +80,40 @@
 
   
 
+    <h2><a href='/bend/updates/2014/12/02/upcoming-meeting-reminder/'>Reminder: Next meeting is Dec. 4</a></h2>
+    <p>Just a reminder that the next Maptime Bend meetup is Thursday, Dec. 4 at McMenamins! RSVP with the button to the right of this post!</p>
+
+    <div class='pad1y keyline-top'>
+      <strong class='quiet small block space-bottom1'>Posted Dec 02 2014 by Andy Zeigert</strong>
+    </div>
+
+  
+</div>
+
+<div class='space-bottom4'>
+
+  
+
+    <h2><a href='/bend/updates/2014/11/15/second-meeting-a-success/'>Second meeting a success</a></h2>
+    <p>The second Maptime Bend meeting was a success! Turnout was good and we introduced Leaflet, which led to a lot of great discussion. We had several colorful maps by the end of the night. Stay tuned for information about next month’s meeting, where we’ll be going over the basics of OpenStreetMap.</p>
+
+<p><img src="/bend/assets/meeting2.jpg" alt="The second meeting of Maptime Bend had a slightly larger turnout!" /></p>
+
+    <div class='pad1y keyline-top'>
+      <strong class='quiet small block space-bottom1'>Posted Nov 15 2014 by Andy Zeigert</strong>
+    </div>
+
+  
+</div>
+
+<div class='space-bottom4'>
+
+  
+
     <h2><a href='/bend/2014/11/09/Leaflet-crash-course/'>The fault in our parks: Leaflet mapping crash course</a></h2>
     <h2 id="creating-a-leaflet-map-and-adding-some-data">Creating a Leaflet map and adding some data</h2>
 
-<p>Perhaps you’ve had some experience putting together Google maps using lists of addresses or other kinds of location information, but you’re interested in the nitty gritty of creating a map using open-source tools. This tutorial is intended to quickly familiarize you with the tools needed to make custom maps using open-source data. </p>
+<p>Perhaps you’ve had some experience putting together Google maps using lists of addresses or other kinds of location information, but you’re interested in the nitty gritty of creating a map using open-source tools. This tutorial is intended to quickly familiarize you with the tools needed to make custom maps using open-source data.</p>
 
 <h3 id="what-well-be-using">What we’ll be using</h3>
 
@@ -107,25 +137,27 @@
 
 <p>We also need to include the Leaflet CSS file in the head element.</p>
 
-<p><code>
-&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /&gt;
-</code></p>
+<p>```</p>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+<p>```</p>
 
 <p>Now we need to create a <code>div</code> element in our <code>body</code> element with a specific <code>id</code> that we’ll reference in our javascript. Nothing goes into the <code>div</code> now, but our javascript will put the map there later.</p>
 
-<p><code>
-&lt;div id="map"&gt;&lt;/div&gt;
-</code></p>
+<p>```</p>
+<div id="map"></div>
+<p>```</p>
 
 <p>In addition, let’s add some CSS to our head element that tells the map to be 400 pixels tall. The width will fill the width of the browser window, or in the case of this page, the parent element, which is this article.</p>
 
-<p><code>
-&lt;style type="text/css"&gt;
+<p>```</p>
+<style type="text/css">
 #map { 
   height: 600px;
 }
-&lt;/style&gt;
-</code></p>
+</style>
+
+<p>```</p>
 
 <p>Now we’ll need to actually write the javascript that creates the map. After our <code>&lt;div id="map"&gt;&lt;/div&gt;</code> element, let’s open a script element and start adding the Leaflet-specific javascript that builds the map:</p>
 
@@ -485,75 +517,6 @@ L.geoJson(faults, { // ...and this right after our previous geoJson call
   
 </div>
 
-<div class='space-bottom4'>
-
-  
-
-    <h2><a href='/bend/2014/10/20/maptime-bend-wiki/'>Maptime Bend wiki</a></h2>
-    <p>Maptime Bend now has <a href="https://github.com/MaptimeBend/maptimebend.github.io/wiki">a wiki!</a></p>
-
-    <div class='pad1y keyline-top'>
-      <strong class='quiet small block space-bottom1'>Posted Oct 20 2014 by Andy Zeigert</strong>
-    </div>
-
-  
-</div>
-
-<div class='space-bottom4'>
-
-  
-
-    <h2><a href='/bend/2014/10/20/first-meeting-a-success/'>First meeting a success</a></h2>
-    <p><img src="/bend/assets/meeting_1.jpg" alt="Around the table from left: Ryan McAdler, Beej Jorgensen, John Barry, Andy Zeigert and Colleen Miller. Not pictured is Alex Friant, who took the picture." /></p>
-
-<p>The inaugaral Maptime Bend meeting was a success! Below is a rundown of the event.</p>
-
-<p>Minutes for Oct. 16, 2014, 6 p.m.</p>
-
-<h3 id="location">Location</h3>
-<p>McMenamins Old St. Francis School main pub, “Smoke Room.”</p>
-
-<h3 id="attending">Attending</h3>
-<ul>
-  <li>Andy Zeigert</li>
-  <li>Ryan McAdler</li>
-  <li>Alex Friant</li>
-  <li>Beej Jorgensen</li>
-  <li>Colleen Miller</li>
-  <li>John Barry</li>
-</ul>
-
-<h3 id="notes">Notes</h3>
-
-<p>Introductions were made, and everyone said who they were and what their interest in #maptime was.</p>
-
-<p>Quickly moved into a discussion of cool tools and possible collaborative projects.</p>
-
-<p>One project that everyone agreed would be fun to work on together was a trail map repository and website, both hiking and mountain biking.</p>
-
-<p>Friant mentioned <a href="http://codeoregon.com" title="CodeOregon">CodeOregon.com</a> as a great resource for learning basic front-end development tools.</p>
-
-<p>Discussed Trello group and invited new participants for planning future meetings.</p>
-
-<p>Discussed ideas for future meeting topics, including:</p>
-
-<ul>
-  <li>OpenStreetMap basics</li>
-  <li>CartoDB basics</li>
-  <li>QGIS basics</li>
-</ul>
-
-<p>Presenting #maptime at quarterly COGIS meeting was also proposed. </p>
-
-<p>Meeting adjourned around 8:30 p.m.</p>
-
-    <div class='pad1y keyline-top'>
-      <strong class='quiet small block space-bottom1'>Posted Oct 20 2014 by Andy Zeigert</strong>
-    </div>
-
-  
-</div>
-
 
 <!-- Pagination links -->
 <div class='col12 center small strong space pad2y'>
@@ -562,6 +525,8 @@ L.geoJson(faults, { // ...and this right after our previous geoJson call
       <a href='/bend/' class='button fill-blue icon left-arrow'>Newer</a>
     
   
+  
+    <a href='/bend/page3' class='button fill-blue rcon right-arrow'>Older</a>
   
 </div>
 
@@ -583,9 +548,9 @@ L.geoJson(faults, { // ...and this right after our previous geoJson call
   var rsvp = document.getElementById('rsvpdate');
   var date,formatted,link;
   ''
-    date = '2015,1,7';
-    formatted = 'Wednesday, Jan 07 2015';
-    link = 'http://www.meetup.com/maptimebend/events/219266930/';
+    date = '2015,4,2';
+    formatted = 'Thursday, Apr 02 2015';
+    link = 'http://www.meetup.com/maptimebend/events/221352125/';
   ''
 
   if (date && new Date().getTime() <= new Date(date).getTime() + (24 * 60 * 60 * 1000)) {

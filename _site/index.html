@@ -8,8 +8,8 @@
   <meta property='og:url' content='' />
   <meta name='twitter:title' content='' />
   <meta property='og:title' content='' />
-  <meta name='twitter:description' content='{% for item in paginator.posts %} &amp;lt;div class=&#39;space-bottom4&#39;&amp;gt; {% if item.category == ‘event’ %} &amp;lt;h2&amp;gt;&amp;lt;a href=&#39;{{site.baseurl}}{{item.url}}&#39;&amp;gt;{{item.title}}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt; {{item.content}} &amp;lt;div class=&#39;keyline-all round pad2 col12 clearfix&#39;&amp;gt; &amp;lt;div class=&#39;col8 pad0y&#39;&amp;gt; Join us: &amp;lt;span class=&#39;quiet&#39;&amp;gt;{{item.date...' />
-  <meta property='og:description' content='{% for item in paginator.posts %} &amp;lt;div class=&#39;space-bottom4&#39;&amp;gt; {% if item.category == ‘event’ %} &amp;lt;h2&amp;gt;&amp;lt;a href=&#39;{{site.baseurl}}{{item.url}}&#39;&amp;gt;{{item.title}}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt; {{item.content}} &amp;lt;div class=&#39;keyline-all round pad2 col12 clearfix&#39;&amp;gt; &amp;lt;div class=&#39;col8 pad0y&#39;&amp;gt; Join us: &amp;lt;span class=&#39;quiet&#39;&amp;gt;{{item.date...' />
+  <meta name='twitter:description' content='{% for item in paginator.posts %} {% if item.category == &#39;event&#39; %} {{item.title}} {{item.content}} Join us: {{item.date | date:&quot;%A, %b %d %Y&quot;}} RSVP {% else %} {{item.title}} {{item.content}} Posted {{item.date...' />
+  <meta property='og:description' content='{% for item in paginator.posts %} {% if item.category == &#39;event&#39; %} {{item.title}} {{item.content}} Join us: {{item.date | date:&quot;%A, %b %d %Y&quot;}} RSVP {% else %} {{item.title}} {{item.content}} Posted {{item.date...' />
   
   <title>Maptime Bend</title>
   <link rel='stylesheet' href='/bend/site.css' type='text/css'/>
@@ -75,6 +75,54 @@
 
       <div class='col8 margin2r prose content'>
         <!-- This loops through the paginated posts -->
+
+<div class='space-bottom4'>
+
+  
+
+    <h2><a href='/bend/event/2015/04/02/OSM-continued/'>Level up your OSM skillz</a></h2>
+    <p>The next Maptime Bend meetup is scheduled for Thursday, April 2!</p>
+
+<h3 id="next-level-osm">Next level OSM</h3>
+
+<p>Join us for a special Field Trip edition of Maptime Bend! We’ll be getting outside (assuming the weather is nice) to collect some nearby path data with GPS handsets or smartphones, then bringing that data back to the “lab” and using it to create new paths in OpenStreetMap.</p>
+
+    <div class='keyline-all round pad2 col12 clearfix'>
+      <div class='col8 pad0y'>
+        Join us: <span class='quiet'>Thursday, Apr 02 2015</span>
+      </div>
+      <div class='col4'>
+        <a class='button fill-orange block' href='http://www.meetup.com/maptimebend/events/221352125/'>RSVP</a>
+      </div>
+    </div>
+
+  
+</div>
+
+<div class='space-bottom4'>
+
+  
+
+    <h2><a href='/bend/event/2015/02/05/february_meetup/'>Next meetup set for February 5!</a></h2>
+    <p>The next Maptime Bend meetup is scheduled for Thursday, Feb. 5!</p>
+
+<h3 id="cartocss-101">CartoCSS 101</h3>
+
+<p><a href="https://twitter.com/geografa">Rafa</a> from <a href="https://www.mapbox.com/">MapBox</a> is making the journey from the valley to school us all in CartoCSS and MapBox Studio.</p>
+
+<p><strong>Note:</strong>  We may need to move the venue if we get a large turn out.</p>
+
+    <div class='keyline-all round pad2 col12 clearfix'>
+      <div class='col8 pad0y'>
+        Join us: <span class='quiet'>Thursday, Feb 05 2015</span>
+      </div>
+      <div class='col4'>
+        <a class='button fill-orange block' href='http://www.meetup.com/maptimebend/events/220179019/'>RSVP</a>
+      </div>
+    </div>
+
+  
+</div>
 
 <div class='space-bottom4'>
 
@@ -871,36 +919,6 @@ mappers. That said, I still use iD for quick fixes.</p>
   
 </div>
 
-<div class='space-bottom4'>
-
-  
-
-    <h2><a href='/bend/updates/2014/12/02/upcoming-meeting-reminder/'>Reminder: Next meeting is Dec. 4</a></h2>
-    <p>Just a reminder that the next Maptime Bend meetup is Thursday, Dec. 4 at McMenamins! RSVP with the button to the right of this post!</p>
-
-    <div class='pad1y keyline-top'>
-      <strong class='quiet small block space-bottom1'>Posted Dec 02 2014 by Andy Zeigert</strong>
-    </div>
-
-  
-</div>
-
-<div class='space-bottom4'>
-
-  
-
-    <h2><a href='/bend/updates/2014/11/15/second-meeting-a-success/'>Second meeting a success</a></h2>
-    <p>The second Maptime Bend meeting was a success! Turnout was good and we introduced Leaflet, which led to a lot of great discussion. We had several colorful maps by the end of the night. Stay tuned for information about next month’s meeting, where we’ll be going over the basics of OpenStreetMap.</p>
-
-<p><img src="/bend/assets/meeting2.jpg" alt="The second meeting of Maptime Bend had a slightly larger turnout!" /></p>
-
-    <div class='pad1y keyline-top'>
-      <strong class='quiet small block space-bottom1'>Posted Nov 15 2014 by Andy Zeigert</strong>
-    </div>
-
-  
-</div>
-
 
 <!-- Pagination links -->
 <div class='col12 center small strong space pad2y'>
@@ -928,9 +946,9 @@ mappers. That said, I still use iD for quick fixes.</p>
   var rsvp = document.getElementById('rsvpdate');
   var date,formatted,link;
   ''
-    date = '2015,1,7';
-    formatted = 'Wednesday, Jan 07 2015';
-    link = 'http://www.meetup.com/maptimebend/events/219266930/';
+    date = '2015,4,2';
+    formatted = 'Thursday, Apr 02 2015';
+    link = 'http://www.meetup.com/maptimebend/events/221352125/';
   ''
 
   if (date && new Date().getTime() <= new Date(date).getTime() + (24 * 60 * 60 * 1000)) {

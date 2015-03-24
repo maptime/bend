@@ -77,7 +77,7 @@
         <h2>The fault in our parks: Leaflet mapping crash course</h2>
 <h2 id="creating-a-leaflet-map-and-adding-some-data">Creating a Leaflet map and adding some data</h2>
 
-<p>Perhaps you’ve had some experience putting together Google maps using lists of addresses or other kinds of location information, but you’re interested in the nitty gritty of creating a map using open-source tools. This tutorial is intended to quickly familiarize you with the tools needed to make custom maps using open-source data. </p>
+<p>Perhaps you’ve had some experience putting together Google maps using lists of addresses or other kinds of location information, but you’re interested in the nitty gritty of creating a map using open-source tools. This tutorial is intended to quickly familiarize you with the tools needed to make custom maps using open-source data.</p>
 
 <h3 id="what-well-be-using">What we’ll be using</h3>
 
@@ -101,25 +101,27 @@
 
 <p>We also need to include the Leaflet CSS file in the head element.</p>
 
-<p><code>
-&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /&gt;
-</code></p>
+<p>```</p>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+<p>```</p>
 
 <p>Now we need to create a <code>div</code> element in our <code>body</code> element with a specific <code>id</code> that we’ll reference in our javascript. Nothing goes into the <code>div</code> now, but our javascript will put the map there later.</p>
 
-<p><code>
-&lt;div id="map"&gt;&lt;/div&gt;
-</code></p>
+<p>```</p>
+<div id="map"></div>
+<p>```</p>
 
 <p>In addition, let’s add some CSS to our head element that tells the map to be 400 pixels tall. The width will fill the width of the browser window, or in the case of this page, the parent element, which is this article.</p>
 
-<p><code>
-&lt;style type="text/css"&gt;
+<p>```</p>
+<style type="text/css">
 #map { 
   height: 600px;
 }
-&lt;/style&gt;
-</code></p>
+</style>
+
+<p>```</p>
 
 <p>Now we’ll need to actually write the javascript that creates the map. After our <code>&lt;div id="map"&gt;&lt;/div&gt;</code> element, let’s open a script element and start adding the Leaflet-specific javascript that builds the map:</p>
 
@@ -478,9 +480,9 @@ L.geoJson(faults, { // ...and this right after our previous geoJson call
   var rsvp = document.getElementById('rsvpdate');
   var date,formatted,link;
   ''
-    date = '2015,1,7';
-    formatted = 'Wednesday, Jan 07 2015';
-    link = 'http://www.meetup.com/maptimebend/events/219266930/';
+    date = '2015,4,2';
+    formatted = 'Thursday, Apr 02 2015';
+    link = 'http://www.meetup.com/maptimebend/events/221352125/';
   ''
 
   if (date && new Date().getTime() <= new Date(date).getTime() + (24 * 60 * 60 * 1000)) {
