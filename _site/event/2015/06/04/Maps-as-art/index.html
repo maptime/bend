@@ -1,0 +1,212 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <meta charset='UTF-8'/>
+  <meta name='twitter:site' content='@maptimebend' />
+  <meta property='og:site_name' content='Maptime Bend' />
+  <meta name='twitter:url' content='' />
+  <meta property='og:url' content='' />
+  <meta name='twitter:title' content='Maps are pretty!' />
+  <meta property='og:title' content='Maps are pretty!' />
+  <meta name='twitter:description' content='The next Maptime Bend meetup is scheduled for Thursday, June 4! Maps are a powerful tools, but sometimes they can be gosh-darn nice to look at, too Join the Maptime...' />
+  <meta property='og:description' content='The next Maptime Bend meetup is scheduled for Thursday, June 4! Maps are a powerful tools, but sometimes they can be gosh-darn nice to look at, too Join the Maptime...' />
+  
+  <title>Maptime Bend | Maps are pretty!</title>
+  <link rel='stylesheet' href='/bend/site.css' type='text/css'/>
+  <link rel='shortcut icon' href='/bend/img/favicon.png' type='image/x-icon' />
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
+</head>
+<body>
+  <div class='masthead fill-blue'>
+    <div class='fill-darken0 pad1y strong dark'>
+      <div class='limiter'>
+        <a href='http://maptime.io/'>maptime.io</a>
+      </div>
+    </div>
+  </div>
+  <header class='fill-blue'>
+    <div class='limiter contain'>
+      <a href='/bend/' class='sprite maptime pin-left'>Maptime</a>
+      <div class='col12 clearfix pad2y'>
+        <div class='round pad2 col6 margin6 strong dark fill-darken0 fill-chapter row4 truncate contain'>
+          <h1><a class='dark contain z1' href='/bend/'>Maptime Bend</a></h1>
+          <div class='pin-right pad4x pad1y hide-mobile'>
+            <span class='sprite marker'></span>
+          </div>
+          <a href='https://twitter.com/maptimebend/' class='contain z1 fill-blue button'>
+            @maptimebend on Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class='limiter pad4y'>
+    <div class='col12 clearfix'>
+      <aside class='col3 fr space-bottom2 sidebar'>
+        <div class='fill-purple strong dark round pad2 space-bottom2'>
+          <h3>The next Maptime Bend is:</h3>
+          <div id='rsvpdate'></div>
+        </div>
+
+        <div class='hide-mobile'>
+          <div class='popup-group'>
+            <a href='https://github.com/maptime/bend/' class='col12 space-bottom2 button'>Watch these events</a>
+            <div class='popup popup-big keyline-all pad1 small round'>
+              <ol class='space-bottom1'>
+                <li>1. Click the <strong>Watch these events</strong> button.</li>
+                <li>2. Login to GitHub or signup for an account.</li>
+                <li>3. Click the <strong>Watch</strong> button on the repo.</li>
+              </ol>
+              <div class='center'>
+                <img src='/bend/img/watchrepo.png' alt='Watch repo' />
+              </div>
+            </div>
+          </div>
+
+          <div class='followers'></div>
+          <div class='center'>
+            <div class='pad0y space-bottom2'>
+              <a class='small' href='https://github.com/maptime/bend/watchers'>View all</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class='col8 margin2r prose content'>
+        <h2>Maps are pretty!</h2>
+<p>The next Maptime Bend meetup is scheduled for Thursday, June 4!</p>
+
+<h1 id="maps-are-a-powerful-tools-but-sometimes-they-can-be-gosh-darn-nice-to-look-at-too">Maps are a powerful tools, but sometimes they can be gosh-darn nice to look at, too</h1>
+
+<p>Join the Maptime Bend crew as we take a look at some of the more creative map styles developed using Mapbox Studio and CartoCSS!</p>
+
+<p>We will:</p>
+
+<ol>
+  <li>
+    <p>Take a quick look at Mapbox Studio (This will be review for those who remember our February meetup!)</p>
+  </li>
+  <li>
+    <p>Download some example map styles and take a look at the file structure and how Studio uses the files</p>
+  </li>
+  <li>
+    <p>Spend some time customizing our own maps!</p>
+  </li>
+</ol>
+
+<h3 id="important-links">Important links</h3>
+
+<p>Mapbox Studio: <a href="https://www.mapbox.com/mapbox-studio/">mapbox.com/mapbox-studio</a></p>
+
+<p>Some cool base styles:
+<img src="/bend/assets/map_samples/woodcut.png" alt="Woodcut" title="Woodcut" />
+<a href="https://github.com/mapbox/mapbox-studio-woodcut.tm2">Woodcut</a></p>
+
+<p><img src="/bend/assets/map_samples/pirates.png" alt="Pirates" title="Pirates" />
+<a href="https://github.com/mapbox/mapbox-studio-pirates.tm2">Pirates</a></p>
+
+<p><img src="/bend/assets/map_samples/super_mario.png" alt="Super Mario" title="Super Mario" />
+<a href="https://github.com/mapbox/super-mario-world.tm2">Super Mario World</a></p>
+
+<p><img src="/bend/assets/map_samples/wheatpaste.png" alt="Wheatpaste" title="Wheatpaste" />
+<a href="https://github.com/mapbox/mapbox-studio-wheatpaste.tm2">Wheatpaste</a></p>
+
+<p><img src="/bend/assets/map_samples/comic.png" alt="Comic" title="Comic" />
+<a href="https://github.com/mapbox/mapbox-studio-comic.tm2">Comic</a></p>
+
+<p><img src="/bend/assets/map_samples/pencil.png" alt="Pencil" title="Pencil" />
+<a href="https://github.com/mapbox/mapbox-studio-pencil.tm2">Pencil</a></p>
+
+<p><img src="/bend/assets/map_samples/picture_book.png" alt="Picture Book" title="Picture Book" />
+<a href="https://github.com/mapbox/mapbox-studio-picture-book.tm2">Picture Book</a></p>
+
+<p><img src="/bend/assets/map_samples/space_station.png" alt="Space Station" title="Space Station" />
+<a href="https://github.com/mapbox/mapbox-studio-space-station.tm2">Picture Book</a></p>
+
+<p><img src="/bend/assets/map_samples/winter_wonderland.png" alt="Winter Wonderland" title="Winter Wonderland" />
+<a href="https://github.com/mapbox/mapbox-studio-winter-wonderland.tm2">Winter Wonderland</a></p>
+
+<p><img src="/bend/assets/map_samples/looseleaf.png" alt="Looseleaf" title="Looseleaf" />
+<a href="https://github.com/mapbox/mapbox-studio-looseleaf.tm2">Looseleaf</a></p>
+
+<p>Those were all created by the Mapbox team, and they’ve made <a href="https://github.com/mapbox?page=2&amp;query=.tm2&amp;utf8=✓">a bunch more than that</a>. And there are so many more out there by folks like us!</p>
+
+<h3 id="where-do-i-get-the-data">Where do I get the data???</h3>
+
+<p>Fortunately, Mapbox has taken the effort to provide users with what is arguably the only data set they’ll ever need. Mapbox constantly pulls the latest OpenStreetMap data and sorts it into handy classes for styling. They’ve also included their own Terrain styles, which include vector terrain information, hillshades and topo lines.</p>
+
+<p>Want to use your own data? No problem. There’s a <a href="https://www.mapbox.com/guides/source-quickstart/">tutorial for that</a>.</p>
+
+<h3 id="where-do-i-start">Where do I start?!?</h3>
+
+<p>Not sure where to start? I’ve conveniently put all of the above map style documents (they end in .tm2) <a href="/bend/assets/june_styles.zip">into a zip file that you can grab</a>.</p>
+
+<h3 id="ok-what-do-i-do-with-my-map">OK, what do I do with my map?</h3>
+
+<p>You can upload your style to the Mapbox service and use it in <a href="https://www.mapbox.com/mapbox.js/api/v2.1.9/">your own projects</a>. Because of the magic of vector tiles, you can style the entire earth with a pretty small style document.</p>
+
+<p>You can also use the built-in static image export feature in Mapbox Studio to create static images for printing, if you so desire.</p>
+
+
+<div class='keyline-all round pad2 col12 clearfix'>
+  <div class='col8 pad0y'>
+    Join us: <span class='quiet'>Thursday, Jun 04 2015</span>
+  </div>
+  <div class='col4'>
+    <a class='button fill-orange block' href='http://www.meetup.com/maptimebend/events/222384845/'>RSVP</a>
+  </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55628983-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class='fill-light pad2y'>
+    <div class='limiter center small quiet'>
+      <p>This website is <a href='http://github.com/maptime/bend/'>open source</a> and you can improve it. Learn more about contributing <a href='https://guides.github.com/activities/forking/'>here</a>.</p>
+   </div>
+  </footer>
+
+<script src='/bend/js/jquery.min.js'></script>
+<script src='/bend/js/underscore.min.js'></script>
+<script src='/bend/site.js'></script>
+<script>
+  var rsvp = document.getElementById('rsvpdate');
+  var date,formatted,link;
+  ''
+    date = '2015,6,4';
+    formatted = 'Thursday, Jun 04 2015';
+    link = 'http://www.meetup.com/maptimebend/events/222384845/';
+  ''
+
+  if (date && new Date().getTime() <= new Date(date).getTime() + (24 * 60 * 60 * 1000)) {
+    rsvp.innerHTML = '<h3>' + formatted + '</h3>' +
+    '<a class="button fill-orange block" href=' + link + '>RSVP</a>';
+  } else {
+    rsvp.innerHTML = '<h3>TBA</h3>';
+  }
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55628983-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
