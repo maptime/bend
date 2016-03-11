@@ -1,10 +1,12 @@
 ---
 layout: event
 category: event
-title: Maps are pretty!
-rsvp: http://www.meetup.com/maptimebend/events/222384845/
+title: "Maps are pretty!"
+rsvp: "http://www.meetup.com/maptimebend/events/222384845/"
 author: Andy Zeigert
+published: true
 ---
+
 
 The next Maptime Bend meetup is scheduled for Thursday, June 4!
 
