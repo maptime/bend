@@ -73,7 +73,7 @@ If you have made it here, you are successful!  Unzip either your Strava or Garmi
 * Feel free to add tracks, waypoints, and or routes.
 ![QGIS FTW]({{ site.url }}/bend/assets/trail_mapping/Screen Shot 2017-02-16 at 5.05.07 PM.png "QGIS FTW")
 * You should see several GIS layers including points and lines.
-![QGIS FTW]({{ site.url }}/bend/assets/trail_mapping/images/Screen Shot 2017-02-16 at 5.08.43 PM.png "QGIS FTW")
+![QGIS FTW]({{ site.url }}/bend/assets/trail_mapping/Screen Shot 2017-02-16 at 5.08.43 PM.png "QGIS FTW")
 
 OH AWESOME! Zoom in on this data.  Click the identify tool.  Explore your first dataset you have added to QGIS.
 
