@@ -137,6 +137,13 @@ OK...Let's make a map.
 * WOAH we have a map.  Feel free to add a title, north arrow, legend and more!
 ![QGIS FTW]({{ site.url }}/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 5.03.42 PM.png "QGIS FTW")
 
+#BLAIR HERE IS THE COMMAND
+
+Navigate to your uncompressed `activities` folder. (Must have gdal installed.)
+
+```
+for i in $( ls *.gpx ); do ogr2ogr final_gpx.shp -append $i tracks -fieldTypeToString DateTime; done
+```
 
 **CONGRATS**
 YOU just made your first QGIS Map

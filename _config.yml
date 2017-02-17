@@ -8,3 +8,20 @@ maptime:
   chapter: Maptime Bend
   twitter: maptimebend
   disqus: maptimebend
+kramdown:
+  input: GFM
+  hard_wrap: false
+  gems:
+    - jekyll-coffeescript
+    - jekyll-gist
+    - jekyll-mentions
+    - jekyll-paginate
+    - jekyll-redirect-from
+    - redcarpet
+    - pygments.rb
+  whitelist:
+    - jekyll-coffeescript
+    - jekyll-gist
+    - jekyll-mentions
+    - jekyll-paginate
+    - jekyll-redirect-from
