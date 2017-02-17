@@ -41,69 +41,27 @@ Strava is used primarily by cyclists and runners to track activities.  I am sure
 
 * Login to <a href="https://www.strava.com/">Strava</a>
 ![Hey look at my Strava Dashboard]({{ site.url }}/bend/assets/trail_mapping/Screen Shot 2017-02-16 at 4.30.07 PM.png "QGIS")
-* Strava lets you bulk download data for all your activities!  Go to Settings -> 'Download your data'
+* Strava lets you bulk download data for all your activities!  Go to <b>Settings</b> -> <b>'Download your data'</b>
 ![Hey look at my Strava Dashboard]({{ site.url }}/bend/assets/trail_mapping/Screen Shot 2017-02-16 at 4.38.39 PM.png "QGIS")
+* Strava will send you an email to your account with a zip file of all your activities.
 
+### Extracting Data From Garmin Connect
 
-***Main UI***
+For those of you using a Garmin device that is not linked to Strava, you can extract data from Garmin's web-based system.
 
-When you first launch QGIS the application should looks similar to the screenshot below:
+* Login to <a href="https://connect.garmin.com">Garmin Connect</a>
+![Hey look at my Garmin Dashboard]({{ site.url }}/bend/assets/trail_mapping/Screen Shot 2017-02-16 at 4.46.45 PM.png "QGIS")
+* Navigate to the activity you want to extract.  Export the activity as a GPX file.
+![Hey look at my Garmin Data]({{ site.url }}/bend/assets/trail_mapping/Screen Shot 2017-02-15 at 7.30.46 PM.png "QGIS")
 
-![Alt text](http://maptimeboston.github.io/qgis-101/images/qgis-ui.png)
+### Load data into QGIS
 
-***Map Navigation***
+If you have made it here, you are successful!  Unzip either your Strava or Garmin data.
 
-![Alt text](http://maptimeboston.github.io/qgis-101/images/map-navigation.png)
-
-The Map Navigation tools can be accessed using the top set of tools.  These tools allow you to zoom, pan, etc.
-
-***File Toolbar***
-
-![Alt text](http://maptimeboston.github.io/qgis-101/images/file-toolbar.png)
-
-***Manage Layers***
-
-![Alt text](http://maptimeboston.github.io/qgis-101/images/add-data.png)
-
-***Attributes Toolbar***
-
-![Alt text](http://maptimeboston.github.io/qgis-101/images/attribute-toolbar.png)
-
-***Layers Panel***
-
-![Alt text](http://maptimeboston.github.io/qgis-101/images/layers-panel.png)
-
-- Access and manage map layers
-
-***Browser Panel***
-
-![Alt text](http://maptimeboston.github.io/qgis-101/images/browser-panel.png)
-
-- Browse local and remote geospatial data.
-
-***Other Panels and More***
-
-![Alt text](http://maptimeboston.github.io/qgis-101/images/other-toolbars.png)
-
-**OK** enough of this intro stuff.  Let's dig in and make a map.
-
-### Let's MAKE A MAP!
-
-**Introduction**<br>
-Building on top of our previous meetups I figured that we could take a deeper look into the trail data that exists here in Central Oregon.
-
-Let's start first with downloading some City Limit data from the [Oregon State Geospatial Clearinghouse](http://www.oregon.gov/DAS/Pages/irmd/geo/sdlibrary.aspx).  The Oregon State Geospatial Clearinghouse is a great resource for State level Geospatial data.  Local County and City data can be accessed (sometimes for $) from Deschutes County and the City of Bend.
-
-![QGIS FTW]({{ site.url }}/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 3.51.20 PM.png "QGIS FTW")
-
-**Bend City Limits**
-***Steps to Download Our First Dataset***
-
-* Go to the [Spatial Data Library Alphalist](http://www.oregon.gov/DAS/CIO/GEO/pages/alphalist.aspx)
-* Download the [City Limits 2013 Polygon Shapefile](http://navigator.state.or.us/sdl/data/shapefile/k24/citylim_2013.zip)
-* Unzip the compressed file to your local machine - you should see several files which as a whole make up a [Shapefile](http://en.wikipedia.org/wiki/Shapefile)
-
-![QGIS FTW]({{ site.url }}/bend/assets/qgis-lets-make-a-map/images/Screen Shot 2015-01-07 at 4.01.43 PM.png "QGIS FTW")
+* Login to <a href="https://connect.garmin.com">Garmin Connect</a>
+![Hey look at my Garmin Dashboard]({{ site.url }}/bend/assets/trail_mapping/Screen Shot 2017-02-16 at 4.46.45 PM.png "QGIS")
+* Navigate to the activity you want to extract.  Export the activity as a GPX file.
+![Hey look at my Garmin Data]({{ site.url }}/bend/assets/trail_mapping/Screen Shot 2017-02-15 at 7.30.46 PM.png "QGIS")
 
 ***Add the Shapefile to QGIS***
 
